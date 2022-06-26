@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GR1 Library</title>
+    <link rel="icon" href="./assets/img/logo/logo_circle.png">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/font/fontawesome-free-5.15.4-web/css/all.min.css">
+</head>
+<body>
+    <!-- Begin header -->
+    <header>
+        <nav class="grid wide">
+            <ul class="nav__list">
+                <div class="nav__list-left">
+                    <li class="nav__lit-item">
+                        <a href="#" class="nav__list-link">
+                            <span class="nav__list-item-text">Trang chủ</span>
+                        </a>
+                    </li>
+                    <li class="nav__list-item">
+                        <span class="nav__list-link">
+                            <span class="nav__list-item-text">
+                                Giới thiệu
+                                <i class="nav__list-icon fas fa-sort-down"></i>
+                            </span>
+                        </span>
+                        <ul class="subnav__list-item">
+                            <li><a href="./function.html">Chức năng, nhiệm vụ</a></li>
+                            <li><a href="./develop.html">Định hướng phát triển</a></li>
+                            <li><a href="./member.html">Thành viên</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav__list-item">
+                        <span class="nav__list-link">
+                            <span class="nav__list-item-text">
+                                Quy định
+                                <i class="nav__list-icon fas fa-sort-down"></i>
+                            </span>
+                        </span>
+                        <ul class="subnav__list-item">
+                            <li><a href="./howtouse.html">Sử dụng thư viện</a></li>
+                            <li><a href="./card.html">Thủ tục làm thẻ</a></li>
+                            <li><a href="./calendar.html">Lịch phục vụ</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav__list-item">
+                        <a href="./search.html" class="nav__list-link">
+                            <span class="nav__list-item-text">Tra cứu</span>
+                        </a>
+                    </li>
+                    <li class="nav__list-item">
+                        <span class="nav__list-link">
+                            <span class="nav__list-item-text">
+                                Dịch vụ 
+                                <i class="nav__list-icon fas fa-sort-down"></i>
+                            </span>
+                        </span>
+                        <ul class="subnav__list-item">
+                            <li><a href="./borrow.html">Mượn, trả tài liệu</a></li>
+                            <li><a href="./feedback.html">Phản hồi</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav__list-item">
+                        <a href="./contact.html" class="nav__list-link">
+                            <span class="nav__list-item-text">Liên hệ</span>
+                        </a>
+                    </li>  
+                </div>
+                <!-- Login -->
+              <div class="nav__list-right">
+                <li class="nav__list-item">
+                    <button type="button" class="btn btn-nav-login btn-nav-login-separate" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        Đăng nhập
+                    </button>
+                    <button type="button" class="btn btn-nav-register" data-bs-toggle="modal" data-bs-target="#registerModal">
+                        Đăng ký
+                    </button>
+                </li>
+            </div>
+            </ul>
+            <!-- Respon -->
+            <div class="nav-respon">
+                <label for="navigation" class="nav-bar"><i class="nav-bar-icon fas fa-bars"></i></label>
+            <input type="checkbox" id="navigation" hidden>
+            <div class="nav-bar-content">
+                <ul class="nav-bar-list">
+                    <div class="nav-list-left">
+                        <li class="nav__list-item">
+                            <a href="#" class="nav-list-link">
+                                <span class="nav-list-item-text">Trang chủ</span>
+                            </a>
+                        </li>
+                        <li class="nav-list-item">
+                            <span class="nav-list-link">
+                                <span class="nav-list-item-text">
+                                    <label for="subnav-bar" class="subnav-bar">
+                                        Giới thiệu
+                                        <i class="nav-list-icon fas fa-sort-down"></i>
+                                    </label>
+                                </span>
+                            </span>
+                            <input type="checkbox" id="subnav-bar" hidden>
+                            <ul class="subnav-list-item">
+                                <li><a href="./function.html">Chức năng, nhiệm vụ</a></li>
+                                <li><a href="./develop.html">Định hướng phát triển</a></li>
+                                <li><a href="./member.html">Thành viên</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-list-item">
+                            <span class="nav-list-link">
+                                <span class="nav-list-item-text">
+                                    <label for="subnav-bar1" class="subnav-bar1">
+                                        Quy định
+                                        <i class="nav-list-icon fas fa-sort-down"></i>
+                                    </label>
+                                </span>
+                            </span>
+                            <input type="checkbox" id="subnav-bar1" hidden>
+                            <ul class="subnav-list-item">
+                                <li><a href="./howtouse.html">Sử dụng thư viện</a></li>
+                                <li><a href="./card.html">Thủ tục làm thẻ</a></li>
+                                <li><a href="./calendar.html">Lịch phục vụ</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="./search.html" class="nav-list-link">
+                                <span class="nav-list-item-text">Tra cứu</span>
+                            </a>
+                        </li>
+                        <li class="nav-list-item">
+                            <span class="nav-list-link">
+                                <span class="nav-list-item-text">
+                                    <label for="subnav-bar2" class="subnav-bar2">
+                                        Dịch vụ 
+                                        <i class="nav-list-icon fas fa-sort-down"></i>
+                                    </label>
+                                </span>
+                            </span>
+                            <input type="checkbox" id="subnav-bar2" hidden>
+                            <ul class="subnav-list-item">
+                                <li><a href="./borrow.html">Mượn, trả tài liệu</a></li>
+                                <li><a href="./feedback.html">Phản hồi</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="./contact.html" class="nav-list-link">
+                                <span class="nav-list-item-text">Liên hệ</span>
+                            </a>
+                        </li>  
+                    </div>
+                    <!-- Login -->
+                  <div class="nav-list-right">
+                    <li class="nav-list-item">
+                        <button type="button" class="btn btn-nav-login btn-nav-login-separate" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            Đăng nhập
+                        </button>
+                        <button type="button" class="btn btn-nav-register" data-bs-toggle="modal" data-bs-target="#registerModal">
+                            Đăng ký
+                        </button>
+                    </li>
+                </div>
+                </ul>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+<!-- The Modal -->
+<div class="modal" id="loginModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Đăng nhập</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form action="login.html" class="form-modals">
+            <div class="mb-3">
+              <label for="gmail" class="form-label form-account">Email:</label>
+              <input type="email" class="form-control" id="gmail" placeholder="Nhập email" name="email">
+            </div>
+            <div class="mb-3">
+              <label for="pwd" class="form-label form-pwd">Mật khẩu:</label>
+              <div class="wrap-pwd">
+                <input type="password" class="form-control enter-pwd" id="pwd" placeholder="Nhập mật khẩu" name="pswd">
+                <i class="show-pwd fas fa-eye" onclick="showPass()"></i>
+              </div>
+            </div>
+            <div class="form-check mb-3">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="remember" checked> Nhớ mật khẩu
+              </label>
+                <div class="forget"><a href="./changepsw.html">Quên mật khẩu?</a></div>
+            </div>
+            <input type="button" onclick="login()" class="btn btn-login btn-submit btn-primary" value="Đăng nhập">
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="registerModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Đăng ký</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form class="form-modal" action="index.html">
+            <div class="mb-3">
+                <label for="usname" class="form-label usNamep">Tên đầy đủ:</label>
+                <input type="text" class="form-control" id="usname" placeholder="Nhập tên bạn" name="name">
+              </div>
+              <div class="mb-3">
+                <label for="mail" class="form-label form-email">Email:</label>
+                <input type="email" class="form-control" id="mail" placeholder="Nhập email" name="email">
+              </div>
+              <div class="mb-3">
+                <label for="pass" class="form-label form-pass">Mật khẩu:</label>
+                <div class="wrap-pwd wrap-pwd1">
+                    <input type="password" class="form-control enter-pwd1" id="pass" placeholder="Nhập mật khẩu" name="pswd">
+                    <i class="show-pwd fas fa-eye" onclick="showPass1()"></i>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="pass2" class="form-label form-pass2">Xác nhận mật khẩu:</label>
+                <div class="wrap-pwd wrap-pwd2">
+                    <input type="password" class="form-control enter-pwd2" id="pass2" placeholder="Nhập lại mật khẩu" name="cf-pswd">
+                    <i class="show-pwd fas fa-eye" onclick="showPass2()"></i>
+                </div>
+              </div>
+              <div class="form-check mb-3">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" name="remember" id="checkBox" checked> Đồng ý mọi điều khoản
+                </label>
+              </div>
+              <input type="button" class="btn btn-register btn-submit btn-primary" onclick="register()" value="Đăng ký">
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Slider -->
+    <div id="slider" class="carousel slide grid wide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#slider" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#slider" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#slider" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <a href="" class="slider__link">
+                    <img src="./assets/img/slider/slider1.jpg" alt="Slide 1" class="slide__img d-block">
+                    <div class="carousel-caption slider__content">
+                        <h3>GR1 Library</h3>
+                        <p>Thư viện trực tuyến, hàng đầu miền Bắc</p>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="" class="slider__link">
+                    <img src="./assets/img/slider/slider2.jpg" alt="Slide 2" class="slide__img d-block">
+                    <div class="carousel-caption slider__content">
+                        <h3>Our team</h3>
+                        <p>Những con người nhiệt huyết, chăm chỉ</p>
+                    </div> 
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="" class="slider__link">
+                    <img src="./assets/img/slider/slider3.jpg" alt="Slide 3" class="slide__img d-block">
+                    <div class="carousel-caption slider__content">
+                        <h3>Top 5</h3>
+                        <p>Tổng hợp 5 cuốn sách hay nhất mọi thời đại</p>
+                    </div>
+                </a>  
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#slider" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#slider" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <!-- Begin main -->
+    <main class="container grid wide">
+        <div class="main row">
+            <!-- sidebar -->
+            <div class="sidebar col-lg-3">
+                <div class="sidebar__guide">
+                    <h3>Chỉ dẫn</h3>
+                    <ul class="sidebar__guide-list">
+                        <li class="sidebar__guide-items">
+                            <a href="./time.html">
+                                <i class="sidebar__guide-items-icon far fa-clock"></i>
+                                Giờ mở cửa
+                            </a>
+                        </li>
+                        <li class="sidebar__guide-items">
+                            <a href="./card.html">Thủ tục / điều kiện</a>
+                        </li>
+                        <li class="sidebar__guide-items">
+                            <a href="mailto:nnhiep582k2@gmail.com">
+                                <i class="sidebar__guide-items-icon fas fa-envelope-square"></i>
+                                E-mail: gr1@gmail.com
+                            </a>
+                        </li>
+                        <li class="sidebar__guide-items">
+                            <a href="./borrow.html">Mượn sách</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sidebar__event">
+                    <h3>
+                        <i class="sidebar__guide-items-icon far fa-bell"></i>
+                        Thông báo - Sự kiện
+                    </h3>
+                    <ul class="sidebar__guide-list">
+                        <li class="sidebar__guide-items">
+                            <a href="./events.html">
+                                <img width="30px" height="30px" src="https://file1.hutech.edu.vn/file/news/icon_thong_bao-1546501833.jpg" alt="Thông báo">
+                                <img src="http://lib.hanu.vn/App_Themes/hanu/images/right-arrow-red3.png" alt="">
+                                <b>THÔNG BÁO</b> MỞ LỚP TẬP HUẤN
+                                <img src="http://lib.hanu.vn/App_Themes/hanu/images/news.gif" alt="">
+                            </a>
+                        </li>
+                        <li class="sidebar__guide-items">
+                            <a href="./events.html">
+                                <img src="http://lib.hanu.vn/App_Themes/hanu/images/right-arrow-red3.png" alt="">
+                                <b>ĐĂNG KÝ</b> MUA TÀI LIỆU HỌC TẬP K62
+                                <img src="http://lib.hanu.vn/App_Themes/hanu/images/news.gif" alt="">
+                            </a>
+                        </li>
+                        <li class="sidebar__guide-items">
+                            <a href="./events.html">
+                                <img src="http://lib.hanu.vn/App_Themes/hanu/images/right-arrow-red3.png" alt="">
+                                <b>GIỚI THIỆU</b> SÁCH CÔNG NGHỆ THÔNG TIN
+                            </a>
+                        <li class="sidebar__guide-items">
+                            <a href="./events.html">
+                                <img src="http://lib.hanu.vn/App_Themes/hanu/images/right-arrow-red3.png" alt="">
+                                <b>GIỚI THIỆU</b> SÁCH NGHIÊN CỨU PHÁT TRIỂN
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="./events.html" class="sidebar__event-seemore">Xem tất cả</a>
+                </div>
+                <div class="sidebar__notification">
+                    <h3>Khám phá</h3>
+                    <ul class="sidebar__guide-list">
+                        <li class="sidebar__guide-items">
+                            <a href="./books.html">
+                                <i class="sidebar__guide-items-icon fas fa-book"></i>
+                                Sách
+                            </a>
+                        </li>
+                        <li class="sidebar__guide-items">
+                            <a href="./writer.html">
+                                <i class="sidebar__guide-items-icon fas fa-user-edit"></i>
+                                Nhà văn
+                            </a>
+                        </li>
+                        <li class="sidebar__guide-items">
+                            <a href="./news.html">
+                                <i class="fas fa-book-open"></i>
+                                Thể loại
+                            </a>
+                        </li>
+                        <li class="sidebar__guide-items">
+                            <a href="./search.html">
+                                <i class="sidebar__guide-items-icon fas fa-shopping-cart"></i>
+                                Đặt mua
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- content -->
+            <div class="content col-lg-9">
+                <div class="content__box">
+                    <h3>Review</h3>
+                    <a target="__blank" href="https://www.reader.com.vn/review-sach-chien-binh-cau-vong-a513.html" class="content__box-para">
+                        <img src="./assets/img/content/review1.jpg" alt="Chiến binh cầu vồng" class="content__img">
+                        <div class="content__box-wrap">
+                            <span>Review sách "Chiến binh cầu vồng"</span>
+                            <p>“Chiến binh cầu vồng” là một bức tranh chân thực về xã hội Indonesia truyền cảm hứng sâu sắc về ý nghĩa đích thực của tình bạn, tình thầy trò cao quý và cả tình cảm gia đình thiêng liêng. Cuốn sách còn cho các bạn đọc thấy được cuộc sống nghèo khổ, cơ cực của tầng lớp lao động thấp ở Belitong cũng như hiện thực tàn nhẫn của cái nghèo.</p>
+                        </div>
+                    </a>
+                    <a target="__blank" href="https://www.reader.com.vn/review-sach-khi-hoi-tho-hoa-thinh-khong-a365.html" class="content__box-para">
+                        <img src="./assets/img/content/review2.jpg" alt="Khi hơi thở hóa thinh không" class="content__img">
+                        <div class="content__box-wrap">
+                            <span>Review sách "Khi hơi thở hóa thinh không"</span>
+                            <p>“Khi hơi thở hóa thinh không” là tự truyện đẫm nước mắt của bác sĩ Paul Kalanithi về cuộc đời và cuộc chiến của anh chống lại căn bệnh ung thư phổi. Xuyên suốt cuốn sách là những hoài niệm về sự sống và cái chết, khiến cho mỗi chúng ta khi đọc xong cuốn sách này đều phải suy ngẫm về cuộc đời.</p>
+                        </div>
+                    </a>
+                    <a target="__blank" href="https://www.reader.com.vn/review-sach-quang-ganh-lo-di-va-vui-song-a132.html" class="content__box-para">
+                        <img src="./assets/img/content/review3.png" alt="Quẳng gánh lo đi và vui sống" class="content__img">
+                        <div class="content__box-wrap">
+                            <span>Review sách "Quẳng gánh lo đi và vui sống"</span>
+                            <p>Thực tế, trong đời sống hiện đại và đầy đủ vật chất như ngày nay, những tưởng ít ai phải lo lắng quá nhiều về cuộc sống. Nhưng không, số lượng người tự tử, căng thẳng, lo lắng, trầm cảm đang ngày càng nhiều và đáng báo động, đặc biệt là ở các thành phố lớn. Ngoài những biện pháp đơn thuần về thể chất và thuốc men để chế ngự, chúng ta cần tìm hiểu về rõ thực trạng bản thân mình đang thực sự vướng mắc và từ đó tìm cách giải quyết. Vậy thì bạn hãy thử đọc cuốn sách “Quẳng gánh lo đi và vui sống” của tác giả Dale Carnegie nhé! Đó là lí do mà mình muốn chia sẻ về cuốn sách này cho tất cả mọi người, nhất là các bạn trẻ.</p>
+                        </div>
+                    </a>
+                    <div class="content__box-wrap-more">
+                        <a target="__blank" href="https://www.reader.com.vn/review-sach.html" class="content__box-more">Xem tất cả</a>
+                    </div>
+                </div>
+                <div class="content__box">
+                    <h3>Top list</h3>
+                    <a target="__blank" href="https://readvii.com/sach-kinh-di-hay/" class="content__box-para">
+                        <img src="./assets/img/content/toplist1.jfif" alt="Top 25 cuốn sách kinh dị" class="content__img">
+                        <div class="content__box-wrap">
+                            <span>25 cuốn sách kinh dị hay nhất</span>
+                            <p>Bằng cách dõi theo những góc khuất trong tâm lý thủ phạm, bằng cách khai thác những tình huống gặp nạn gần gũi với đời sống, bằng cách gia giảm tương đương giữa phạm tội và luận tội, ZOO đã kín đáo thả theo sau luồng hơi lạnh ấy một chút nhân tính, một chút nhân quả, một chút nhân văn.</p>
+                        </div>
+                    </a>
+                    <a target="__blank" href="https://sachhay24h.com/top-10-cuon-sach-hay-nhat-moi-thoi-dai-ma-ban-nen-doc-a477.html" class="content__box-para">
+                        <img src="./assets/img/content/toplist2.jpg" alt="Top 10 cuốn sách" class="content__img">
+                        <div class="content__box-wrap">
+                            <span>Top 10 cuốn sách hay nhất mọi thời đại mà bạn nên đọc</span>
+                            <p>Từ trước đến nay, sách chính là một kho tàng kiến thức vô giá của con người tạo dựng nên. Trải qua bao nhiêu thế kỷ lâu dài, thì trên thế giới đã có rất nhiều cuốn sách hay khác nhau được ra đời và trở thành những cuốn sách kinh điển được nhiều thế hệ độc giả tìm đọc.</p>
+                        </div>
+                    </a>
+                    <a target="__blank" href="https://nhanvan.vn/blogs/tin-tuc/top-25-bo-truyen-manga-hay-nhat-moi-thoi-dai-danh-cho-doc-gia" class="content__box-para">
+                        <img src="./assets/img/content/toplist3.jpg" alt="Top 25 bộ manga" class="content__img">
+                        <div class="content__box-wrap">
+                            <span>Top 25 bộ truyện manga hay nhất</span>
+                            <p>Truyện tranh là một phần không thể thiếu trong tuổi thơ của mỗi người, khi đã đọc một bộ truyện manga mang nội dung hấp dẫn, lôi cuốn thì khó có thể dừng lại. Đối với nhiều người, có những bộ truyện gắn liền với họ từ khi còn là đứa trẻ cho đến khi đã trưởng thành, có công việc. Như vậy cũng có thể hiểu được sức hút của thể loại truyện Manga lớn như thế nào. Bài viết sau đây sẽ tổng hợp top 22 bộ manga hay nhất mọi thời đại.</p>
+                        </div>
+                    </a>
+                    <div class="content__box-wrap-more">
+                        <a target="__blank" href="https://toplist.vn/top-lists/s%C3%A1ch/" class="content__box-more">Xem tất cả</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Begin footer -->
+    <footer>
+        <div class="grid">
+            <div class="row footer__container container__left">
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                      <img src="assets/img/logo/logo.png" alt="">
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                   <p>THƯ VIỆN GR1  - TRƯỜNG ĐẠI HỌC GIAO THÔNG VẬN TẢI </p>
+                   <p>Địa chỉ: Số 3 phố Cầu Giấy, P.Láng Thượng, Q.Đống Đa, Hà Nội</p>
+                   <p>Điện thoại: (84-24) 9401 7947, Email: <a href="">GR1@utc.edu.vn</a></p>        
+                </div>
+                 <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3724.0977335552943!2d105.80095071457927!3d21.028775093154533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1zU-G7kSAzIHBo4buRIEPhuqd1IEdp4bqleSwgUC5Mw6FuZyBUaMaw4bujbmcsIFEuxJDhu5FuZyDEkGEsIEjDoCBO4buZaQ!5e0!3m2!1sen!2s!4v1635424594072!5m2!1sen!2s" width="200px" height="200px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+          <div class="container-grild">
+            <p>Theo Chúng tôi</p>             
+            <p><a href="https://www.facebook.com/profile.php?id=100033582201464"><i class="fab fa-facebook"></i></a></p>
+            <p><a href="https://www.youtube.com/channel/UCmrOH34ltrhYoIsOSANOvZA"><i class="fab fa-youtube"></i></a></p>
+            <p>
+                &copy; Copyright 2021 by
+                 <a href="" class="footer__link">GR1</a>
+            </p>
+          </div>
+    </footer>
+</body>
+    <script src="./javascript.js"></script>
+</html>

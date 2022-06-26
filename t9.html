@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GR1 Library - Sách</title>
+    <link rel="icon" href="./assets/img/logo/logo_circle.png">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/font/fontawesome-free-5.15.4-web/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: rgba(126, 111, 111, 0.5);
+            --sub-color: #fff;
+            --black-color:rgb(29, 27, 27);
+            --header-height: 54px;
+        } 
+        body{
+            background-image: var(--sub-color);
+            background-color: #f4f4f4;
+            color: var(--black-color);
+        }
+        header {
+            background-color: var(--black-color);
+        }  
+        .subnav__list-item a {
+            background-color: var(--black-color);
+        }
+        .subnav__list-item li:hover a {
+            background-color: var(--sub-color);
+        }
+        .container{
+            min-width: 76%;
+            margin: 0 auto;
+        }
+        .content{
+            padding: 0px;
+            background-color: var(--sub-color);
+            min-width: 1005px;
+            box-shadow: none;
+            margin-top: 54px;
+        }
+        .content__body-first-list span p a {
+            text-decoration: none;
+            padding: 20px;
+            color: var(--black-color);
+            border: 1px solid var(--black-color);
+            border-radius: 20px;
+            margin-left: 20px;
+            margin-right: 10px;
+            display: inline-block;
+            font-size: 20px !important;
+        }
+        .content__header::after{
+                display: block;
+                content: "";
+                background-color: #000;
+                height: 6px;
+                width: 104.4%;
+                position: relative;
+                top: 40px;
+                left: -27px; 
+        }
+        .content__header h2{
+            color: var(--sub-color);
+        }
+        .content__header img{
+            height: 150px;
+            width: 224px;
+            border-radius: 50%;
+            box-shadow: 0px 10px 10px #000;
+        }
+        .content__body-first-item a:hover {
+            color: var(--black-color);
+        }
+        .content__body-first p{
+            color: var(--black-color);
+            font-size:20px;
+            font-weight:600;
+            letter-spacing: 2px;
+            line-height:25px;
+            text-align:center;
+            text-transform:uppercase;
+            margin: 40px 0px;
+            font-size: 30px;
+        }
+        .content__body-first-list span{
+            display: flex;
+            margin: 20px 0;
+        }
+        .content__body-first-list {
+            margin-bottom: -43px;
+        }
+        .content__body-first-item a:hover{
+            background-color: #ccc;
+            border-radius: 50px;
+            animation: border 1s ease;
+            color: var(--sub-color);
+        }
+        .content__body-first-item a:hover::after{
+            content: "";
+            display: block;
+            width: 70px;
+            background-color:var(--primary-color);
+            height: 5px;
+            position: relative;
+            border-radius: 50%;
+            animation: item 1s ease;
+        }
+        .content__body-writer{
+            padding: 0px;
+        }
+        .content__body-writer img{
+            width: 417px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 10px #000;
+        }
+        .content__body-logo{
+            text-align: center;
+            margin: 150px 0px 0px 0px;
+        }
+        .content__body-logo p{
+            font-family:Arnhem;
+            font-size:32px;
+            font-weight:500;
+            line-height:38px;   
+        }
+        footer {
+            min-height: 414px;
+            background-color:#eeeeee;
+            display: block;
+            font-weight:500;
+            font-family: Arnhem;
+        }
+        .footer__container {
+            color: var(--black-color);
+        }
+        .footer__sign {
+            margin: 20px;
+            font-size: 21px;
+            padding:20px 0px;
+        }
+        .footer__sign input{
+            background-color: #ffffff;
+            font-family:Calibre;
+            font-size:18px;
+            font-weight:500;
+            line-height:17px;
+            padding:15px;
+        }
+        .footer__sign button{
+            background-color: red;
+        }
+        .footer__sign button:hover{
+            color: var(--sub-color);
+            background-color: #ccc;
+        }
+        .footer__content a{
+            text-decoration: none;
+            color: var(--black-color);
+            font-family: sans-serif;
+        }
+        .footer__content a:hover{
+            color: red;
+        }
+        footer .container-grild{
+            background-color: var(--black-color);
+            margin-top: 50px;
+            padding: 24px;
+        }
+        footer .container-grild p{
+            display: inline-block;
+            padding: 20px;
+            font-size: 20px;
+        }
+        footer .container-grild p a{
+            color: var(--sub-color);
+            font-size: 20px;
+        }
+        footer .container-grild p a:hover{
+            color: red;
+        }
+        @keyframes border {
+            0% {
+                border-bottom: 3px solid black;
+            }
+            100% {
+                border-bottom: 3px solid black;
+            }
+        }
+        .container__main{
+            padding: 0px;
+            margin-top: 54px;
+        }
+        .books__header{
+            background-image: linear-gradient(0,rgba(14, 13, 12, 0.5),rgba(15, 18, 19, 0.5)),url(https://d4804za1f1gw.cloudfront.net/wp-content/uploads/sites/70/2020/02/24190644/Books-Editorial.jpg);
+            background-repeat: no-repeat;
+            height: 275px;
+            width: 100%;
+            padding: 20px;
+        }
+        .books__header h1{
+            color:#ffffff;
+            font-size:60px;
+            font-weight:900;
+            line-height:72px;
+        }
+        .books__header p{
+            color:#ffffff;
+            font-size:20px;
+            font-weight:900;
+            line-height:24px;
+            margin:20px 0px 18px;
+        }
+        .books__body{
+            background-color: var(--sub-color);
+            padding: 20px 30px 0px;
+            width: 90%;
+            margin: 20px auto;
+        } 
+        .books__body-menu {
+            background-color: #f4f4f4;
+            padding: 24px 16px 24px 16px;
+            position: sticky;
+            top: 46px;
+        }
+        .books__body-menu {
+            background-color: #f4f4f4;
+            padding: 24px 16px 24px 16px;
+        }
+        .books__body-menu  li{
+            list-style-type: none;
+            padding: 8px 16px;
+            margin: 0px 0px 4px;
+        }
+        .books__body-menu  li:first-child{
+            background-color: #dcdcdc;
+            border-radius: 10px;
+        }
+        .books__body-menu  li:first-child a{
+            font-weight: 700;
+        }
+        .books__body-menu li:hover{
+            background-color: #dcdcdc;
+            border-radius: 10px;
+        }
+        .books__body-menu li a{
+            color: var(--black-color);
+            text-decoration: none;
+            list-style-type: none;
+            display: block;
+        }
+        .books__body-menu li a:hover{
+            color: var(--sub-color);
+        }
+        .books__body-news-item img {
+            width: 100%;
+            height:100%;
+        }
+       
+        .books__body-list a{
+            color: #006e96;
+            text-decoration: none;
+            font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 900;
+        }
+        .books__body-list a:hover{
+            color: red;
+        }
+       
+        .books__body-img{
+           
+            background-color: #dcdcdc;
+            min-width: 100%;
+       
+        }
+
+        .book__body-news{
+            margin-top: 5px;
+        }
+
+          .books__body-img img{
+            
+                min-height: 74%;
+            }
+     
+
+        .books__body-img img{
+            width: 100% ;
+
+        }
+
+        .books__body-items{
+            margin-top: 20px;
+        }
+
+       
+        .books__body-items a{
+            color: var(--black-color);
+            text-decoration: none;
+            color:#292929;
+            font-size:20px;
+            font-weight:900;
+         
+        }
+        .books__body-items p a:hover{
+            color: red;
+        }
+       
+        .books__body-items  p a{
+            text-align: justify;
+        }
+
+        .books__body-news-item{
+            margin-top: 20px;
+        }
+
+   
+       .books__body-icon-left:hover{
+           color: red;
+       }
+       .books__body-list-news h1{
+            color: #006e96;
+            font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight:900;
+            line-height:40px;
+            margin: 10px 0px 30px 0px;
+           
+       }
+       .books__body-list-news a{
+            color: var(--black-color);
+            text-decoration: none;
+            color:#292929;
+            font-size:24px;
+            font-weight:900;
+            line-height:31.92px;
+            margin: 0px 30px 20px;
+       }
+       .books__body-list-news a:hover{
+           color: red;
+       }
+       .books__body-list-news a i{
+           margin-left: 10px;
+       }
+       .books__body-list-news a i:hover{
+           color: red;
+       }
+       .book__body-btn{
+            margin-top: 20px;
+       }
+       .book__body-btn a{
+           text-align: center;
+           color: var(--sub-color);
+           font-size: 20px;
+       }
+
+       .book__body-btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+       }
+       .book__body-btn .btn-red:hover{
+            background-color: #ccc;
+            color:var(--black-color);
+       }
+
+       .books__body-menu-icon i{
+        font-size: 30px;
+        display: inline-block;
+       }
+
+       .books__body-menu-icon i:hover{
+        color: #fff;
+       }
+
+       .books__body-menu-icon:hover{
+        background-color: #ccc;
+
+       }
+
+       .books__body-menu-icon{
+         width: 63px;
+            height: 55px;
+            cursor: pointer;
+            padding: 10px 16px;
+            display: inline-block;
+            border: 1px solid black;
+            border-radius: 10px;
+            display: none;
+            position: absolute;
+       }
+
+
+
+
+
+    </style>
+</head>
+    <link rel="stylesheet" href="./assets/css/res_book.css">
+<body>
+     <!-- Begin header -->
+     <header>
+        <nav class="grid wide">
+            <ul class="nav__list">
+                <div class="nav__list-left">
+                    <li class="nav__lit-item">
+                        <a href="index.html" class="nav__list-link">
+                            <span class="nav__list-item-text">Trang chủ</span>
+                        </a>
+                    </li>
+                    <li class="nav__list-item">
+                        <span class="nav__list-link">
+                            <span class="nav__list-item-text">
+                                Giới thiệu
+                                <i class="nav__list-icon fas fa-sort-down"></i>
+                            </span>
+                        </span>
+                        <ul class="subnav__list-item">
+                            <li><a href="./function.html">Chức năng, nhiệm vụ</a></li>
+                            <li><a href="./develop.html">Định hướng phát triển</a></li>
+                            <li><a href="./member.html">Thành viên</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav__list-item">
+                        <span class="nav__list-link">
+                            <span class="nav__list-item-text">
+                                Quy định
+                                <i class="nav__list-icon fas fa-sort-down"></i>
+                            </span>
+                        </span>
+                        <ul class="subnav__list-item">
+                            <li><a href="./howtouse.html">Sử dụng thư viện</a></li>
+                            <li><a href="./card.html">Thủ tục làm thẻ</a></li>
+                            <li><a href="./calendar.html">Lịch phục vụ</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav__list-item">
+                        <a href="./search.html" class="nav__list-link">
+                            <span class="nav__list-item-text">Tra cứu</span>
+                        </a>
+                    </li>
+                    <li class="nav__list-item">
+                        <span class="nav__list-link">
+                            <span class="nav__list-item-text">
+                                Dịch vụ 
+                                <i class="nav__list-icon fas fa-sort-down"></i>
+                            </span>
+                        </span>
+                        <ul class="subnav__list-item">
+                            <li><a href="./borrow.html">Mượn, trả tài liệu</a></li>
+                            <li><a href="./feedback.html">Phản hồi</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav__list-item">
+                        <a href="./contact.html" class="nav__list-link">
+                            <span class="nav__list-item-text">Liên hệ</span>
+                        </a>
+                    </li>  
+                </div>
+                <!-- Login -->
+              <div class="nav__list-right">
+                <li class="nav__list-item">
+                    <button type="button" class="btn btn-nav-login btn-nav-login-separate" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        Đăng nhập
+                    </button>
+                    <button type="button" class="btn btn-nav-register" data-bs-toggle="modal" data-bs-target="#registerModal">
+                        Đăng ký
+                    </button>
+                </li>
+            </div>
+            </ul>
+            <!-- Respon -->
+            <div class="nav-respon">
+                <label for="navigation" class="nav-bar"><i class="nav-bar-icon fas fa-bars"></i></label>
+            <input type="checkbox" id="navigation" hidden>
+            <div class="nav-bar-content">
+                <ul class="nav-bar-list">
+                    <div class="nav-list-left">
+                        <li class="nav__list-item">
+                            <a href="index.html" class="nav-list-link">
+                                <span class="nav-list-item-text">Trang chủ</span>
+                            </a>
+                        </li>
+                        <li class="nav-list-item">
+                            <span class="nav-list-link">
+                                <span class="nav-list-item-text">
+                                    <label for="subnav-bar" class="subnav-bar">
+                                        Giới thiệu
+                                        <i class="nav-list-icon fas fa-sort-down"></i>
+                                    </label>
+                                </span>
+                            </span>
+                            <input type="checkbox" id="subnav-bar" hidden>
+                            <ul class="subnav-list-item">
+                                <li><a href="./function.html">Chức năng, nhiệm vụ</a></li>
+                                <li><a href="./develop.html">Định hướng phát triển</a></li>
+                                <li><a href="./member.html">Thành viên</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-list-item">
+                            <span class="nav-list-link">
+                                <span class="nav-list-item-text">
+                                    <label for="subnav-bar1" class="subnav-bar1">
+                                        Quy định
+                                        <i class="nav-list-icon fas fa-sort-down"></i>
+                                    </label>
+                                </span>
+                            </span>
+                            <input type="checkbox" id="subnav-bar1" hidden>
+                            <ul class="subnav-list-item">
+                                <li><a href="./howtouse.html">Sử dụng thư viện</a></li>
+                                <li><a href="./card.html">Thủ tục làm thẻ</a></li>
+                                <li><a href="./calendar.html">Lịch phục vụ</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="./search.html" class="nav-list-link">
+                                <span class="nav-list-item-text">Tra cứu</span>
+                            </a>
+                        </li>
+                        <li class="nav-list-item">
+                            <span class="nav-list-link">
+                                <span class="nav-list-item-text">
+                                    <label for="subnav-bar2" class="subnav-bar2">
+                                        Dịch vụ 
+                                        <i class="nav-list-icon fas fa-sort-down"></i>
+                                    </label>
+                                </span>
+                            </span>
+                            <input type="checkbox" id="subnav-bar2" hidden>
+                            <ul class="subnav-list-item">
+                                <li><a href="./borrow.html">Mượn, trả tài liệu</a></li>
+                                <li><a href="./feedback.html">Phản hồi</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="./contact.html" class="nav-list-link">
+                                <span class="nav-list-item-text">Liên hệ</span>
+                            </a>
+                        </li>  
+                    </div>
+                    <!-- Login -->
+                  <div class="nav-list-right">
+                    <li class="nav-list-item">
+                        <button type="button" class="btn btn-nav-login btn-nav-login-separate" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            Đăng nhập
+                        </button>
+                        <button type="button" class="btn btn-nav-register" data-bs-toggle="modal" data-bs-target="#registerModal">
+                            Đăng ký
+                        </button>
+                    </li>
+                </div>
+                </ul>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+   <!-- The Modal -->
+<div class="modal" id="loginModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Đăng nhập</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form action="login.html" class="form-modals">
+              <div class="mb-3">
+                <label for="gmail" class="form-label form-account">Email:</label>
+                <input type="email" class="form-control" id="gmail" placeholder="Nhập email" name="email">
+              </div>
+              <div class="mb-3">
+                <label for="pwd" class="form-label form-pwd">Mật khẩu:</label>
+                <div class="wrap-pwd">
+                  <input type="password" class="form-control enter-pwd" id="pwd" placeholder="Nhập mật khẩu" name="pswd">
+                  <i class="show-pwd fas fa-eye" onclick="showPass()"></i>
+                </div>
+              </div>
+              <div class="form-check mb-3">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" name="remember" checked> Nhớ mật khẩu
+                </label>
+                  <div class="forget"><a href="./changepsw.html">Quên mật khẩu?</a></div>
+              </div>
+              <input type="button" onclick="login()" class="btn btn-login btn-submit btn-primary" value="Đăng nhập">
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="registerModal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Đăng ký</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <form class="form-modal" action="index.html">
+              <div class="mb-3">
+                  <label for="usname" class="form-label usNamep">Tên đầy đủ:</label>
+                  <input type="text" class="form-control" id="usname" placeholder="Nhập tên bạn" name="name">
+                </div>
+                <div class="mb-3">
+                  <label for="mail" class="form-label form-email">Email:</label>
+                  <input type="email" class="form-control" id="mail" placeholder="Nhập email" name="email">
+                </div>
+                <div class="mb-3">
+                  <label for="pass" class="form-label form-pass">Mật khẩu:</label>
+                  <div class="wrap-pwd wrap-pwd1">
+                      <input type="password" class="form-control enter-pwd1" id="pass" placeholder="Nhập mật khẩu" name="pswd">
+                      <i class="show-pwd fas fa-eye" onclick="showPass1()"></i>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="pass2" class="form-label form-pass2">Xác nhận mật khẩu:</label>
+                  <div class="wrap-pwd wrap-pwd2">
+                      <input type="password" class="form-control enter-pwd2" id="pass2" placeholder="Nhập lại mật khẩu" name="cf-pswd">
+                      <i class="show-pwd fas fa-eye" onclick="showPass2()"></i>
+                  </div>
+                </div>
+                <div class="form-check mb-3">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="remember" id="checkBox" checked> Đồng ý mọi điều khoản
+                  </label>
+                </div>
+                <input type="button" class="btn btn-register btn-submit btn-primary" onclick="register()" value="Đăng ký">
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Begin main -->
+    <div class="container__main">
+        <div class="books__header">
+            <h1>Sách tháng 9</h1>
+            <p>Danh sách sách, sự kiện của tác giả, blog của độc giả, tên sách mới </p>
+        </div>
+
+        <div class="books__body row">
+             <div id="display__menu" class="books__body-menu-respon col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                     <ul class="books__body-menu">
+                         <li><a href="#">Sách</a></li>
+                         <li><a href="./prize.html">Giải thưởng</a></li>
+                         <li><a href="./search.html">Bán chạy nhất</a></li>
+                         <li><a href="#books">Sách mới</a></li>             
+                         <li><a href="./news.html">Thể loại</a></li>   
+                         <li><a href="./prize.html">Bán sách hay</a></li>                 
+                     </ul>
+                     
+             </div>
+
+             <div id="book__icon-menu" class="books__body-menu-icon">
+                 <i class="fas fa-bars"></i>
+             </div>
+
+
+             <div class="books__body-list col-lg-9 col-md-9 col-sm-12 col-xs-12 row">
+
+                <h1><a href="">Danh sách sách</a></h1>
+             
+                   <div class="row books__lists">
+                        <div class="books__body-items col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            
+                                <a href="../theloai/khvt.html">
+                                  <div class="books__body-img">
+                                    <img src="https://cor-cdn-static.bibliocommons.com/list_jacket_covers/live/1819738789.png" alt="">
+                                  </div>
+                                    <p><a href="../theloai/khvt.html">Sách khoa học viễn tưởng tháng 11 năm 2021</a></p>
+                                    <p>Sắp ra mắt</p>
+                                </a>
+                            
+                        </div>
+
+                        <div class="books__body-items col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                           
+                                <a href="../theloai/kinhte.html">
+                                  <div class="books__body-img">
+                                    <img src="https://cor-cdn-static.bibliocommons.com/list_jacket_covers/live/1168245679.png" alt="">
+                                  </div>
+                                    <p><a href="../theloai/kinhte.html">Tháng 11 năm 2021 ra mắt sách kinh tế</a></p>
+                                    <p>Sắp ra mắt</p>
+                                </a>
+                            
+                        </div>
+
+                        <div class="books__body-items col-lg-4 col-md-4 col-sm-4 col-xs-12 books__body-icon">
+                        
+                                <a href="../theloai/tlhtc.html">
+                                  <div class="books__body-img">
+                                    <img src="https://cor-cdn-static.bibliocommons.com/list_jacket_covers/live/1224461497.png" alt="">
+                                  </div>
+                                    <p style="margin-top: 5px;" ><a href="../theloai/tlhtc.html">Sách tâm lý Học mới tháng 11 năm 2021</a></p>
+                                    <p>Sắp ra mắt</p>
+                                </a>
+                        
+                        </div>
+                   </div>
+             </div>
+        </div>
+
+
+        <!--  -->
+        <div id="books"  class="books__body-list-news books__body">
+                 <h1>Những cuốn sách mới</h1>
+                 <a href="https://www.harpersbazaar.com/culture/art-books-music/g30719704/best-new-books-2020/">
+                     Sách  mới tháng 9
+                     <i class="fas fa-chevron-right"></i>
+                 </a>
+            <div class="row  book__body-news">
+                 <div class="books__body-news-item col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                   
+                        <img  src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1580481787-411qes5KpRL.jpg?crop=1xw:1xh;center,top&resize=768:*" alt="">
+                
+                 </div>
+                 <div class="books__body-news-item col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                   
+                         <img  src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1580481817-51KB-S8cnTL.jpg?crop=1xw:1xh;center,top&resize=768:*" alt="">
+                  
+                  </div>
+                  <div class="books__body-news-item col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                   
+                         <img  src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1580481851-41y9MCVdEuL.jpg?crop=1xw:1xh;center,top&resize=768:*" alt="">
+                   
+                  </div>
+                  <div class="books__body-news-item col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                  
+                         <img  src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1580481885-410vbUQaLrL.jpg?crop=1xw:1xh;center,top&resize=768:*" alt="">
+            
+                  </div>
+                  <div class="books__body-news-item col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                   
+                         <img  src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1580481962-41nPiqe67CL.jpg?crop=1xw:1xh;center,top&resize=768:*" alt="">
+                   
+                  </div>
+                  <div class="books__body-news-item col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                   
+                         <img  src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1600285396-9780358315070.gif?crop=1xw:1xh;center,top&resize=768:*" alt="">
+                   
+                  </div>
+                 <div class=" book__body-btn">
+                     <a  href="./books.html" class=" btn-success btn btn-red col-lg-3 col-md-3 col-ms-12 col-xs-6">
+                             Tháng 7 năm 2021
+                    </a>
+
+                         <a  href="./t8.html" class="btn-success btn btn-red col-lg-3 col-md-3 col-ms-12 col-xs-6">
+                         
+                             Tháng 8 năm 2021
+                    
+                        </a>
+                        <a  href="" class="btn-success btn btn-red col-lg-3 col-md-3 col-ms-12 col-xs-6">
+                         
+                             Tháng 9 năm 2021
+                    
+                        </a>
+                        <a  href="./t10.html" class="btn-success btn btn-red col-lg-3 col-md-3 col-ms-12 col-xs-6">
+                         
+                             Tháng 10 năm  2021
+                    
+                        </a>
+
+                 </div>
+                  
+                
+         </div>
+       
+             <i style="text-align: center; font-size: 30px;" class="fas fa-ellipsis-h"></i>
+        </div>
+
+
+         <div id="books"  class="books__body-list-news books__body">
+                 <h1>Những cuốn truyện mới</h1>
+                 <a href="https://www.amazon.com/COCO-Blu-ray-Anthony-Gonzalez/dp/B07885CY3T/ref=pd_sbs_1/140-8040376-6570937?pd_rd_w=AuGzb&pf_rd_p=3676f086-9496-4fd7-8490-77cf7f43f846&pf_rd_r=5C0MN88JMQHR9NWZ9MEX&pd_rd_r=df5276e1-b0b1-438a-91cf-29009c4806b2&pd_rd_wg=SxU2V&pd_rd_i=B07885CY3T&psc=1">
+                     Truyện  mới tháng 9
+                     <i class="fas fa-chevron-right"></i>
+                 </a>
+            <div class="row  book__body-news">
+                 <div class="books__body-news-item col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                   
+                        <img  src="https://images-na.ssl-images-amazon.com/images/I/51fZGbZBktL._SX300_SY300_QL70_FMwebp_.jpg" alt="">
+                
+                 </div>
+                 <div class="books__body-news-item col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                   
+                         <img  src="https://images-na.ssl-images-amazon.com/images/I/51uMa5SOLLL._SX300_SY300_QL70_FMwebp_.jpg" alt="">
+                  
+                  </div>
+                  <div class="books__body-news-item col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                   
+                         <img  src="https://images-na.ssl-images-amazon.com/images/I/518Vhp0SO2L._SX300_SY300_QL70_FMwebp_.jpg" alt="">
+                   
+                  </div>
+                  <div class="books__body-news-item col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                  
+                         <img  src="https://images-na.ssl-images-amazon.com/images/I/51ADAKd82rL._SX300_SY300_QL70_FMwebp_.jpg" alt="">
+            
+                  </div>
+                  <div class="books__body-news-item col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                   
+                         <img  src="https://images-na.ssl-images-amazon.com/images/I/51hNfYma5SL._SX300_SY300_QL70_FMwebp_.jpg" alt="">
+                   
+                  </div>
+                  <div class="books__body-news-item col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                   
+                         <img  src="https://m.media-amazon.com/images/I/81MH15ZCYHL._SX342_.jpg" alt="">
+                   
+                  </div>
+                 <div class=" book__body-btn">
+                     <a  href="./books.html" class=" btn-success btn btn-red col-lg-3 col-md-3 col-ms-12 col-xs-6">
+                             Tháng 7 năm 2021
+                    </a>
+
+                         <a  href="./t8.html" class="btn-success btn btn-red col-lg-3 col-md-3 col-ms-12 col-xs-6">
+                         
+                             Tháng 8 năm 2021
+                    
+                        </a>
+                        <a  href="" class="btn-success btn btn-red col-lg-3 col-md-3 col-ms-12 col-xs-6">
+                         
+                             Tháng 9 năm 2021
+                    
+                        </a>
+                        <a  href="./t10.html" class="btn-success btn btn-red col-lg-3 col-md-3 col-ms-12 col-xs-6">
+                         
+                             Tháng 10 năm  2021
+                    
+                        </a>
+
+                 </div>
+                  
+                
+         </div>
+       
+             <i style="text-align: center; font-size: 30px;" class="fas fa-ellipsis-h"></i>
+        </div>
+     </div> 
+
+ <!-- Begin footer -->
+
+ <!-- Chỉnh lại -->
+ <script>
+    var checkMail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    function validEmail(txt){
+        if (txt.value.length==0){
+            alert('Email không được để trống');
+            return;
+        }
+        if (!checkMail.test(txt.value)){
+            alert('Email không hợp lệ');
+            return;
+        }
+        alert('Chúc mừng bạn đăng ký thành công');
+    }
+</script>
+<footer style="min-height: 365px;">
+<div class="grid wide">
+<div class="row footer__container">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div style="text-align: center;" class="footer__sign">
+
+                <p>Cung cấp địa chỉ e-mail của bạn và bạn sẽ nhận được một phiếu giảm giá 10%</p>
+                <form action="" name="form1">
+                    <input id="Email_sale" type="email" placeholder="Name@email.com" name="email">
+                </form>
+            </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div  style="text-align: center;" class="footer__sign">
+            <p>Tiết kiệm 10% cho đơn hàng đầu tiên của bạn bằng cách đăng ký</p>
+            <button  class="btn-success btn" onclick="validEmail(document.form1.email)" >Đăng ký giảm giá</button>
+
+        </div>
+
+          <div  style="text-align: center;"  class="footer__content row">
+                <a class="col-lg-2 col-md-6 col-sm-6 col-xs-12"  href="" class="book__body-btn">Sách</a>
+                <a class="col-lg-2 col-md-6 col-sm-6 col-xs-12" href="./writer.html"> Nhà văn</a>
+                <a class="col-lg-2 col-md-6 col-sm-6 col-xs-12" href="./events.html"> Tin tức</a>
+                <a class="col-lg-2 col-md-6 col-sm-6 col-xs-12" href="./search.html"> Đặt mua</a>
+                 <a class="col-lg-2 col-md-6 col-sm-6 col-xs-12" href="./feedback.html"> Ủng hộ</a>
+                 <a class="col-lg-2 col-md-6 col-sm-6 col-xs-12" href="./member.html">Về</a>
+        </div>
+    </div>
+      
+    </div>
+  </div>
+  <div class="container-grild">
+    <p>Theo Chúng tôi</p>             
+    <p><a href="https://www.facebook.com/profile.php?id=100033582201464"><i class="fab fa-facebook"></i></a></p>
+    <p><a href="https://www.youtube.com/channel/UCmrOH34ltrhYoIsOSANOvZA"><i class="fab fa-youtube"></i></a></p>
+    <p class="footer__text">&copy; Copyright 2021 by <a href="" class="footer__link">GR1</a></p>
+  </div>
+</footer>
+</body>
+<script src="./javascript.js"></script>
+</html>

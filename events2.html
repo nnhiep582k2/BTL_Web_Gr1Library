@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GR1 Library - Sự kiện, thông báo</title>
+    <link rel="icon" href="./assets/img/logo/logo_circle.png">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/font/fontawesome-free-5.15.4-web/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: rgba(126, 111, 111, 0.5);
+            --sub-color: #fff;
+            --black-color:rgb(29, 27, 27);
+            --header-height: 54px;
+            --left-color:#666;
+        } 
+        body{
+            background-image: var(--sub-color);
+            color: var(--black-color);
+        }
+        header {
+            background-color: var(--black-color);
+        }  
+        .subnav__list-item a {
+            background-color: var(--black-color);
+        }
+        .subnav__list-item li:hover a {
+            background-color: var(--sub-color);
+        }
+        .container{
+            min-width: 76%;
+            margin: 0 auto;
+        }
+        .content{
+            padding: 0px;
+            background-color: var(--sub-color);
+            box-shadow: none;
+            margin-top: 54px;
+        }
+        .content__body-first-list span p a {
+            text-decoration: none;
+            padding: 20px;
+            color: var(--black-color);
+            border: 1px solid var(--black-color);
+            border-radius: 20px;
+            margin-left: 20px;
+            margin-right: 10px;
+            display: inline-block;
+            font-size: 20px !important;
+        }
+        .content__body-first-item a:hover {
+            background-color: #ccc;
+            border-radius: 50px;
+            animation: border 1s ease;
+            color: var(--black-color);
+        }
+        .content__body-first p{
+            color: var(--black-color);
+            font-size:20px;
+            font-weight:600;
+            letter-spacing: 2px;
+            line-height:25px;
+            text-align:center;
+            text-transform:uppercase;
+            margin: 40px 0px;
+            font-size: 30px;
+        }
+        .content__body-first-list span{
+            display: flex;
+            margin: 20px 0;
+        }
+        .content__body-first-list {
+            margin-bottom: -43px;
+        }
+        .content__body-first-item a:hover{
+            background-color: #ccc;
+            border-radius: 50px;
+            animation: border 1s ease;
+            color: var(--sub-color);
+        }
+        .content__body-first-item a:hover::after{
+            content: "";
+            display: block;
+            width: 30px;
+            background-color: var(--sub-color);
+            height: 5px;
+            position: relative;
+            border-radius: 50%;
+            animation: item 1s ease;
+        }
+        footer {
+            min-height: 414px;
+            background-color:#eeeeee;
+            display: block;
+            font-weight:500;
+            font-family: Arnhem;
+        }
+        .footer__container {
+            color: var(--black-color);
+        }
+        .footer__sign {
+            margin: 20px;
+            font-size: 21px;
+            padding:20px 0px;
+        }
+        .footer__sign input{
+            background-color: #ffffff;
+            font-family:Calibre;
+            font-size:18px;
+            font-weight:500;
+            line-height:17px;
+            padding:15px;
+        }
+        .footer__sign button{
+            background-color: red;
+        }
+        .footer__sign button:hover{
+            color: var(--sub-color);
+            background-color: #ccc;
+        }
+        .footer__content a{
+            text-decoration: none;
+            color: var(--black-color);
+            font-family: sans-serif;
+        }
+        .footer__content a:hover{
+            color: red;
+        }
+        footer .container-grild{
+            background-color: var(--black-color);
+            margin-top: 50px;
+            padding: 24px;
+        }
+        footer .container-grild p{
+            display: inline-block;
+            padding: 20px;
+            font-size: 20px;
+        }
+        footer .container-grild p a{
+            color: var(--sub-color);
+            font-size: 20px;
+        }
+        footer .container-grild p a:hover{
+            color: red;
+        }
+        @keyframes border {
+            0% {
+                border-bottom: 3px solid black;
+            }
+            100% {
+                border-bottom: 3px solid black;
+            }
+        }
+        .events__header{
+            background-image: url(https://images.pexels.com/photos/3321793/pexels-photo-3321793.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+            margin-top: var(--header-height);
+            background-position: center -305px;
+            background-repeat: no-repeat;
+            height: 275px;
+            width: 100%;
+            padding: 20px;
+           
+        }
+        .events__body{
+            background-color: #e5e5e5;
+            padding: 20px;
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+        .events__body h1{
+            color: var(--black-color);
+            font-size: 45px;
+            display: inline-block;
+            font-weight: 400;
+        }
+        .events__body i{
+            font-size: 50px;
+        }
+        .events__body-head{
+            text-align: center;
+        }
+        .events__list{
+            padding: 20px;
+        }
+        .events__items-left{
+            background-color: var(--sub-color);
+            padding: 20px 10px 41px 10px;
+            box-shadow: 0px 10px 10px black;
+            border-radius: 10px;
+            margin-bottom: 0px;
+        }
+        .events__items-left .events__items-head{
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-bottom: 1px solid #ccc;
+        }
+        .events__items-head p{
+            margin-bottom: 12px;
+            color: red;
+        }
+        .events__items-left li{
+            list-style-type: none;
+        }
+        .events__items-left .events__items-input input{
+            display: inline-block;
+            color: var(--left-color);
+        }
+        .events__items-left .events__items-input div{
+            color: var(--left-color);
+            font-size: 18px;
+            line-height: 20px;
+            margin: 10px 0px;
+            padding: 0px 0px 10px 0px;
+        }
+        .events__items-input p{
+            font-weight: 800;
+        }
+        .events__items-left .events__items-input{
+            padding: 10px;
+        }  
+        .events__items-left .events__items-input table tr td{
+            color: var(--left-color);
+        }
+        .pd-0{
+            padding: 10px 0px;
+            margin: 0px;
+        }
+        .pd-0 input{
+            color: var(--left-color);
+        }
+        .events__items-object,
+        .events__items-place{
+            padding: 10px;
+        }
+        .events__items-place p{
+            margin-top: 36px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .events__items-place p:first-child{
+            margin-top: 10px;
+        }
+        .events__items-place label{
+            color:var(--left-color);
+        }
+        .events__items-object{
+            margin-top: 10px;
+        }
+        .events__items-right{
+            padding: 0px 0px 0px 20px; 
+        }
+        .events__items-right-news{
+            background-color: var(--sub-color);
+            box-shadow: 0px 10px 10px black;
+            border-radius: 10px;
+            margin-bottom: 0px;
+        }
+        .events__items-right-head  p{
+            text-transform: uppercase;
+        }
+        .events__items-right-head-img p{
+            text-transform: none;
+            color: var(--left-color);
+        }
+        .events__items-right-head-img p:last-child{
+            text-transform: none;
+            color: rgb(42, 24, 209);
+        }
+        .events__items-right-head-img a{
+            text-decoration: none;
+        }
+        .events__items-right-head-time {
+            background-color: #ccc;
+        } 
+        .events__items-right-head-time p{
+            color: var(--sub-color);
+            background-color: var(--black-color);
+            text-align: center;
+        }
+        .events__items-right-head-time div:last-child{
+            border-left: 1px solid var(--left-color);
+        }
+        .events__items-right-body-one{
+            background-color: var(--black-color);
+            font-weight: 700;
+            color: var(--sub-color);
+            height: 45px;
+            padding: 10px;
+            margin-top: 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .events__items-right-head{
+            margin: 0px;
+            padding-bottom: 10px;
+        }
+        .events__items-right-body-two{
+             background-color: var(--sub-color);
+             margin-top: 22px;
+              box-shadow: 0px 10px 10px black;
+             border-radius: 10px;
+             margin-bottom: 0px;
+            padding: 10px;
+            text-align: center;
+        }
+        .events__items-right-body-two-left p{
+            margin-top: 50px;
+        }
+        .events__items-right-body-two-left p i{
+            margin-right: 10px;
+        }
+        .events__items-right-body-two-left p a{
+            text-decoration: none;
+        }
+        .events__items-right-body-two-left p a:hover{
+            text-decoration: underline;
+        }
+        .events__items-right-body-two-left p:first-child{
+            border-right: 1px dotted var(--black-color);
+            border-bottom: 1px dotted var(--black-color);
+        }
+        .events__items-right-body-two-left p:last-child{
+            border-right: 1px dotted var(--black-color);
+            border-bottom: 1px dotted var(--black-color);
+        }
+        .events__items-right-body-two-right p{
+            text-align: center;
+            font-weight: 800;
+            font-size: 20px;
+        }
+        .events__items-right-body-two-right-book{
+            margin-top: 10px;
+            font-size: 20px;
+        }
+        .events__items-right-body-two-right-book:hover{
+            color: red !important;
+        }
+
+        .events__items-right-body-two-right img{
+            width: 100%;
+        }
+    </style>
+</head>
+    <link rel="stylesheet" href="assets/css/res_events.css">
+<body>
+     <!-- Begin header -->
+     <header>
+        <nav class="grid wide">
+            <ul class="nav__list">
+                <div class="nav__list-left">
+                    <li class="nav__lit-item">
+                        <a href="index.html" class="nav__list-link">
+                            <span class="nav__list-item-text">Trang chủ</span>
+                        </a>
+                    </li>
+                    <li class="nav__list-item">
+                        <span class="nav__list-link">
+                            <span class="nav__list-item-text">
+                                Giới thiệu
+                                <i class="nav__list-icon fas fa-sort-down"></i>
+                            </span>
+                        </span>
+                        <ul class="subnav__list-item">
+                            <li><a href="./function.html">Chức năng, nhiệm vụ</a></li>
+                            <li><a href="./develop.html">Định hướng phát triển</a></li>
+                            <li><a href="./member.html">Thành viên</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav__list-item">
+                        <span class="nav__list-link">
+                            <span class="nav__list-item-text">
+                                Quy định
+                                <i class="nav__list-icon fas fa-sort-down"></i>
+                            </span>
+                        </span>
+                        <ul class="subnav__list-item">
+                            <li><a href="./howtouse.html">Sử dụng thư viện</a></li>
+                            <li><a href="./card.html">Thủ tục làm thẻ</a></li>
+                            <li><a href="./calendar.html">Lịch phục vụ</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav__list-item">
+                        <a href="./search.html" class="nav__list-link">
+                            <span class="nav__list-item-text">Tra cứu</span>
+                        </a>
+                    </li>
+                    <li class="nav__list-item">
+                        <span class="nav__list-link">
+                            <span class="nav__list-item-text">
+                                Dịch vụ 
+                                <i class="nav__list-icon fas fa-sort-down"></i>
+                            </span>
+                        </span>
+                        <ul class="subnav__list-item">
+                            <li><a href="./borrow.html">Mượn, trả tài liệu</a></li>
+                            <li><a href="./feedback.html">Phản hồi</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav__list-item">
+                        <a href="./contact.html" class="nav__list-link">
+                            <span class="nav__list-item-text">Liên hệ</span>
+                        </a>
+                    </li>  
+                </div>
+                <!-- Login -->
+              <div class="nav__list-right">
+                <li class="nav__list-item">
+                    <button type="button" class="btn btn-nav-login btn-nav-login-separate" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        Đăng nhập
+                    </button>
+                    <button type="button" class="btn btn-nav-register" data-bs-toggle="modal" data-bs-target="#registerModal">
+                        Đăng ký
+                    </button>
+                </li>
+            </div>
+            </ul>
+            <!-- Respon -->
+            <div class="nav-respon">
+                <label for="navigation" class="nav-bar"><i class="nav-bar-icon fas fa-bars"></i></label>
+            <input type="checkbox" id="navigation" hidden>
+            <div class="nav-bar-content">
+                <ul class="nav-bar-list">
+                    <div class="nav-list-left">
+                        <li class="nav__list-item">
+                            <a href="index.html" class="nav-list-link">
+                                <span class="nav-list-item-text">Trang chủ</span>
+                            </a>
+                        </li>
+                        <li class="nav-list-item">
+                            <span class="nav-list-link">
+                                <span class="nav-list-item-text">
+                                    <label for="subnav-bar" class="subnav-bar">
+                                        Giới thiệu
+                                        <i class="nav-list-icon fas fa-sort-down"></i>
+                                    </label>
+                                </span>
+                            </span>
+                            <input type="checkbox" id="subnav-bar" hidden>
+                            <ul class="subnav-list-item">
+                                <li><a href="./function.html">Chức năng, nhiệm vụ</a></li>
+                                <li><a href="./develop.html">Định hướng phát triển</a></li>
+                                <li><a href="./member.html">Thành viên</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-list-item">
+                            <span class="nav-list-link">
+                                <span class="nav-list-item-text">
+                                    <label for="subnav-bar1" class="subnav-bar1">
+                                        Quy định
+                                        <i class="nav-list-icon fas fa-sort-down"></i>
+                                    </label>
+                                </span>
+                            </span>
+                            <input type="checkbox" id="subnav-bar1" hidden>
+                            <ul class="subnav-list-item">
+                                <li><a href="./howtouse.html">Sử dụng thư viện</a></li>
+                                <li><a href="./card.html">Thủ tục làm thẻ</a></li>
+                                <li><a href="./calendar.html">Lịch phục vụ</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="./search.html" class="nav-list-link">
+                                <span class="nav-list-item-text">Tra cứu</span>
+                            </a>
+                        </li>
+                        <li class="nav-list-item">
+                            <span class="nav-list-link">
+                                <span class="nav-list-item-text">
+                                    <label for="subnav-bar2" class="subnav-bar2">
+                                        Dịch vụ 
+                                        <i class="nav-list-icon fas fa-sort-down"></i>
+                                    </label>
+                                </span>
+                            </span>
+                            <input type="checkbox" id="subnav-bar2" hidden>
+                            <ul class="subnav-list-item">
+                                <li><a href="./borrow.html">Mượn, trả tài liệu</a></li>
+                                <li><a href="./feedback.html">Phản hồi</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="./contact.html" class="nav-list-link">
+                                <span class="nav-list-item-text">Liên hệ</span>
+                            </a>
+                        </li>  
+                    </div>
+                    <!-- Login -->
+                  <div class="nav-list-right">
+                    <li class="nav-list-item">
+                        <button type="button" class="btn btn-nav-login btn-nav-login-separate" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            Đăng nhập
+                        </button>
+                        <button type="button" class="btn btn-nav-register" data-bs-toggle="modal" data-bs-target="#registerModal">
+                            Đăng ký
+                        </button>
+                    </li>
+                </div>
+                </ul>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+  <!-- The Modal -->
+<div class="modal" id="loginModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Đăng nhập</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form action="login.html" class="form-modals">
+              <div class="mb-3">
+                <label for="gmail" class="form-label form-account">Email:</label>
+                <input type="email" class="form-control" id="gmail" placeholder="Nhập email" name="email">
+              </div>
+              <div class="mb-3">
+                <label for="pwd" class="form-label form-pwd">Mật khẩu:</label>
+                <div class="wrap-pwd">
+                  <input type="password" class="form-control enter-pwd" id="pwd" placeholder="Nhập mật khẩu" name="pswd">
+                  <i class="show-pwd fas fa-eye" onclick="showPass()"></i>
+                </div>
+              </div>
+              <div class="form-check mb-3">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" name="remember" checked> Nhớ mật khẩu
+                </label>
+                  <div class="forget"><a href="./changepsw.html">Quên mật khẩu?</a></div>
+              </div>
+              <input type="button" onclick="login()" class="btn btn-login btn-submit btn-primary" value="Đăng nhập">
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="registerModal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Đăng ký</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <form class="form-modal" action="index.html">
+              <div class="mb-3">
+                  <label for="usname" class="form-label usNamep">Tên đầy đủ:</label>
+                  <input type="text" class="form-control" id="usname" placeholder="Nhập tên bạn" name="name">
+                </div>
+                <div class="mb-3">
+                  <label for="mail" class="form-label form-email">Email:</label>
+                  <input type="email" class="form-control" id="mail" placeholder="Nhập email" name="email">
+                </div>
+                <div class="mb-3">
+                  <label for="pass" class="form-label form-pass">Mật khẩu:</label>
+                  <div class="wrap-pwd wrap-pwd1">
+                      <input type="password" class="form-control enter-pwd1" id="pass" placeholder="Nhập mật khẩu" name="pswd">
+                      <i class="show-pwd fas fa-eye" onclick="showPass1()"></i>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="pass2" class="form-label form-pass2">Xác nhận mật khẩu:</label>
+                  <div class="wrap-pwd wrap-pwd2">
+                      <input type="password" class="form-control enter-pwd2" id="pass2" placeholder="Nhập lại mật khẩu" name="cf-pswd">
+                      <i class="show-pwd fas fa-eye" onclick="showPass2()"></i>
+                  </div>
+                </div>
+                <div class="form-check mb-3">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="remember" id="checkBox" checked> Đồng ý mọi điều khoản
+                  </label>
+                </div>
+                <input type="button" class="btn btn-register btn-submit btn-primary" onclick="register()" value="Đăng ký">
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Begin main -->
+    <div class="container__main">
+        <div class="events__header">
+        </div>
+        <div class="events__body">
+            <div class="events__body-head">
+             <div class="content__body-first-list">
+                 <span> 
+                      <p class="content__body-first-item"><a href="./index.html">Trang chủ</a></p>
+                </span>
+             </div>
+            <div>
+             <i class="far fa-calendar-alt"></i>  
+            </div> 
+                <h1>
+                 Tất cả sự kiện (Tiếp theo)</h1>
+            </div>
+             <div class="row events__list">
+ <!-- left -->
+                     <div class="events__items-left col-lg-3 col-md-4 col-sm-12 col-xs-12">
+                         <li>
+                             <div class="events__items-head">
+                                 <p>Ngày</p>
+                             </div>
+                             <form class="events__items-input">
+                                <p>Tham gia ngay</p>
+                                 <div>
+
+                     <!-- Thêm tb -->
+                                     <input onclick="alert('Chào mừng bạn đến sự kiện hôm nay')" type="radio" name="check">
+                                     <label for="nay">Hôm nay</label>  
+                                 </div>
+                                 <div>
+                                     <input onclick="alert('Chào mừng bạn đến sự kiện hôm nay')" type="radio" name="check">
+                                 <label for="nay">Ngày mai</label> 
+                                 </div> 
+                                 <div>
+                                     <input onclick="alert('Chào mừng bạn đến sự kiện hôm nay')" type="radio" name="check">
+                                 <label for="">Cuối tuần này</label>
+                                 </div>
+                                <div>
+                                 <input onclick="alert('Chào mừng bạn đến sự kiện hôm nay')" type="radio" name="check">
+                                 <label for="">7 ngày tới</label>
+                                </div>
+                                <div class=" row">
+                                    <p class=" pd-0 col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                        Từ
+                                    </p>
+                                    <input onclick="alert('Chào mừng bạn đến sự kiện hôm nay')" class="col-lg-9 col-md-9 col-sm-12 col-xs-12" type="date" name="" id="">
+                                </div>
+                                <div class="row">
+                                 <p class=" pd-0 col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                     Đến:
+                                 </p>
+                                 <input onclick="alert('Chào mừng bạn đến sự kiện hôm nay')"  class="col-lg-9 col-md-9 col-sm-12 col-xs-12" type="date" name="" id="">
+                                 </div>
+                             </form>
+                         </li>
+                         <!-- place -->
+                         <li>
+                             <div class="events__items-head">
+                                 <p>Địa điểm</p>
+                             </div>
+                             <div class="events__items-place">
+                                 <p>
+                                     <img src="http://lib.hanu.vn/App_Themes/hanu/images/news.gif" alt="">
+                                     THÔNG BÁO MỞ LỚP TẬP HUẤN 
+                                 </p>
+                                 <input type="checkbox" id="check_events1" onclick="alert('Chào mừng bạn đến sự kiện hôm nay')">
+                                 <label for="check_events1">Sự kiện trực tuyến</label>
+                                 <br>
+                                 <input type="checkbox" onclick="alert('Chào mừng bạn đến sự kiện hôm nay')"> 
+                                 <label for="1">Tại thư viện GR1</label>
+                                 <br>
+                                 <p>GIỚI THIỆU SÁCH CÔNG NGHỆ THÔNG TIN</p>
+                                 <input type="checkbox" id="check_events2" onclick="alert('Chào mừng bạn đến sự kiện hôm nay')">
+                                 <label for="check_events2">Sự kiện trực tuyến</label>
+                                 <br>
+                                 <input type="checkbox" onclick="alert('Chào mừng bạn đến sự kiện hôm nay')"> 
+                                 <label for="2">Tại thư viện GR1</label>
+                                 <br>
+                                 <p>GIỚI THIỆU SÁCH NGHIÊN CỨU PHÁT TRIỂN</p>
+                                 <input type="checkbox" id="check_events3" onclick="alert('Chào mừng bạn đến sự kiện hôm nay')">
+                                 <label for="check_events3">Sự kiện trực tuyến</label>
+                                 <br>
+                                 <input type="checkbox" onclick="alert('Chào mừng bạn đến sự kiện hôm nay')"> 
+                                 <label for="3">Tại thư viện GR1</label>
+                                 <br>
+                                 <p>
+                                     <img src="http://lib.hanu.vn/App_Themes/hanu/images/news.gif" alt="">
+                                     đăng ký mua tài liệu học tập K62</p>
+                                     <input type="checkbox" id="check_events4" onclick="alert('Chào mừng bạn đến sự kiện hôm nay')">
+                                     <label for="check_events4">Sự kiện trực tuyến</label>
+                                 <br>
+                                 <input type="checkbox" onclick="alert('Chào mừng bạn đến sự kiện hôm nay')"> 
+                                 <label for="4">Tại thư viện GR1</label>
+                                 <br>
+                             </div>
+                             <i style="margin-left: 46%;" class="fas fa-ellipsis-h"></i>
+                         </li>
+
+                         <!-- Đối tượng -->
+                         <li>
+                             <div class="events__items-head">
+                                 <p>Đối tượng</p>
+                             </div>
+                             <div class="events__items-object">
+                                 <input type="radio" name="khoa" id="a" onclick="alert('Chào mừng bạn đến sự kiện hôm nay')">
+                                 <label for="a">Khóa 58</label>
+                                 <br>
+                                 <input type="radio" name="khoa" id="b" onclick="alert('Chào mừng bạn đến sự kiện hôm nay')">
+                                 <label for="b">Khóa 59</label>
+                                 <br>
+                                 <input type="radio" name="khoa" id="c" onclick="alert('Chào mừng bạn đến sự kiện hôm nay')">
+                                 <label for="c">Khóa 60</label>
+                                 <br>
+                                 <input type="radio" name="khoa" id="d" onclick="alert('Chào mừng bạn đến sự kiện hôm nay')">
+                                 <label for="d">Khóa 61</label>
+                                 <br>
+                                 <input type="radio" name="khoa" id="e" onclick="alert('Chào mừng bạn đến sự kiện hôm nay')">
+                                 <label for="e">Khóa 62</label>
+                             </div> 
+                         </li>
+                     </div>
+
+  <!-- Right -->
+                     <div class="events__items-right col-lg-9 col-md-8 col-sm-12 col-xs-12">
+                             <div class="events__items-right-news">
+                                 <div class="row events__items-right-head">                       
+                                   <div class="col-lg-9 col-md-9 col-ms-12 col-xs-12">
+                                        <p>  <img src="./assets/img/event/ev.png" alt="">
+                                             GR1 library</p>
+                                        <div class="row events__items-right-head-img">
+                                            <img class="col-lg-6 col-md-6 col-ms-12 col-xs-12" style="border-radius: 30px;" width="200px" height="200px" src="https://cdn.tuoitre.vn/thumb_w/586/2021/9/27/toilabeto-1632709170620955744329.jpg" alt="">
+                                            <a class="col-lg-6 col-md-6 col-ms-12 col-xs-12" href="https://tuoitre.vn/toi-la-beto-cua-nguyen-nhat-anh-se-duoc-dich-va-in-ban-o-han-quoc-20210927093048625.htm">
+                                                    <p> Tham gia trực tuyến: 
+                                                        <br>
+                                                        Tôi là Bêtô của Nguyễn Nhật Ánh sẽ được dịch và in bán ở Hàn Quốc
+                                                        <br>
+                                                       
+                                                    </p>
+                                                    <p> Xem chi tiết</p>
+                                            </a>
+                                        </div>
+                                   </div>
+                                   <div class="col-lg-3 col-md-3 col-ms-12 col-xs-12">
+                                            <div class="row events__items-right-head-time">
+                                                <p>
+                                                    Thứ tư, ngày 3 tháng 11 năm 2021
+                                                </p>
+                                                <div class="col-lg-6 col-md-6 col-ms-12 col-xs-12">
+                                                    <i class="far fa-clock"></i>
+                                                    12h trưa đến 13h
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-ms-12 col-xs-12">
+                                                    trực tuyến
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                             </div>
+                             <div class="events__items-right-body-one">
+                                 <p>Thứ Ba, ngày 2 tháng 11 năm 2021</p>
+                             </div>
+           <!-- Tập huấn -->
+           <div class="events__items-right-body-two">
+                <div class="row">
+                    <div class="events__items-right-body-two-left col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                         <p>
+                            <i class="far fa-clock"></i>
+                            Thời gian 1 giờ chiều -
+                            5 giờ chiều
+                        </p>
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <a href="https://www.google.com/maps/place/University+of+Transport+and+Communications/@21.028775,105.800951,15z/data=!4m13!1m7!3m6!1s0x3135ab47b42f0543:0x85522387d91f54d4!2zQ-G6p3UgR2nhuqV5LCBMw6FuZyBUaMaw4bujbmcsIMSQ4buRbmcgxJBhLCBIw6AgTuG7mWksIFZpZXRuYW0!3b1!8m2!3d21.0292958!4d105.803593!3m4!1s0x3135ab424a50fff9:0xbe3a7f3670c0a45f!8m2!3d21.0281545!4d105.8034205?hl=en&fbclid=IwAR0FbbfBWaD6BEeDaQ4BoOPgXm4HULMUbDHlDyPNIJ4aijrJ8eYD--9-4Sc">Thư viện GR1</a>
+                        </p>
+                    </div>
+                    <div class="events__items-right-body-two-right col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                        <p>ĐĂNG KÝ MUA TÀI LIỆU HỌC TẬP K62</p>
+                        <img width="600px" height="250px" src="http://lib.utc.edu.vn/sites/lib.utc.edu.vn/files/styles/anh_slide/public/5.jpg?itok=SpUESVwG" alt="">
+                    </div>
+                    <a class="events__items-right-body-two-right-book" style="color: #666; text-decoration: none;" href="">Để MUA TÀI LIỆU QUA BƯU ĐIỆN vui lòng liên hệ hotline: 0394017947( Hiệp trẩu ) </a>
+                </div>
+          </div>
+<!-- tài chính -->
+            <div class="events__items-right-body-two">
+                <div class="row">
+                    <div class="events__items-right-body-two-left col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                        <p>
+                            <i class="far fa-clock"></i>
+                            Thời gian 10:30 sáng -
+                            11:30 sáng
+                        </p>
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <a href="https://www.google.com/maps/place/University+of+Transport+and+Communications/@21.028775,105.800951,15z/data=!4m13!1m7!3m6!1s0x3135ab47b42f0543:0x85522387d91f54d4!2zQ-G6p3UgR2nhuqV5LCBMw6FuZyBUaMaw4bujbmcsIMSQ4buRbmcgxJBhLCBIw6AgTuG7mWksIFZpZXRuYW0!3b1!8m2!3d21.0292958!4d105.803593!3m4!1s0x3135ab424a50fff9:0xbe3a7f3670c0a45f!8m2!3d21.0281545!4d105.8034205?hl=en&fbclid=IwAR0FbbfBWaD6BEeDaQ4BoOPgXm4HULMUbDHlDyPNIJ4aijrJ8eYD--9-4Sc">Thư viện GR1</a>
+                        </p>
+                    </div>
+                    <div class="events__items-right-body-two-right col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                        <p>GIỚI THIỆU SÁCH : TÀI CHÍNH NGÂN HÀNG, QUẢN TRỊ KINH DOANH, MARKETING</p>
+                        <img width="600px" height="250px" src="https://www.bloglet.com/wp-content/uploads/2019/01/Traditional-marketing-approaches-that-are-still-relevant-3252x1626.png" alt="">
+                    </div>
+                    <a class="events__items-right-body-two-right-book" style="color: #666; text-decoration: none;" href="">Để MUA TÀI LIỆU QUA BƯU ĐIỆN vui lòng liên hệ hotline: 0394017947( Hiệp trẩu ) </a>
+                </div>
+            </div>
+<!-- lữ hàng  -->
+            <div class="events__items-right-body-two">
+                <div class="row">
+                    <div class="events__items-right-body-two-left col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                        <p>
+                            <i class="far fa-clock"></i>
+                            Thời gian 4:30 chiều -
+                            5:30 chiều
+                        </p>
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <a href="https://www.google.com/maps/place/University+of+Transport+and+Communications/@21.028775,105.800951,15z/data=!4m13!1m7!3m6!1s0x3135ab47b42f0543:0x85522387d91f54d4!2zQ-G6p3UgR2nhuqV5LCBMw6FuZyBUaMaw4bujbmcsIMSQ4buRbmcgxJBhLCBIw6AgTuG7mWksIFZpZXRuYW0!3b1!8m2!3d21.0292958!4d105.803593!3m4!1s0x3135ab424a50fff9:0xbe3a7f3670c0a45f!8m2!3d21.0281545!4d105.8034205?hl=en&fbclid=IwAR0FbbfBWaD6BEeDaQ4BoOPgXm4HULMUbDHlDyPNIJ4aijrJ8eYD--9-4Sc">Thư viện GR1</a>
+                        </p>
+                    </div>
+                    <div class="events__items-right-body-two-right col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                        <p>GIỚI THIỆU SÁCH QUẢN TRỊ DỊCH VỤ DU LỊCH VÀ LỮ HÀNH</p>
+                        <img width="600px" height="250px" src="https://i.ytimg.com/vi/3zW6XXtcwRg/maxresdefault.jpg" alt="">
+                    </div>
+                    <a class="events__items-right-body-two-right-book" style="color: #666; text-decoration: none;" href="">Để MUA TÀI LIỆU QUA BƯU ĐIỆN vui lòng liên hệ hotline: 0394017947( Hiệp trẩu ) </a>
+                </div>
+            </div>
+            </div>
+            </div>
+        </div>
+     </div>
+
+ <!-- Begin footer -->
+
+ <!-- Chỉnh lại -->
+ <script>
+    var checkMail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    function validEmail(txt){
+        if (txt.value.length==0){
+            alert('Email không được để trống');
+            return;
+        }
+        if (!checkMail.test(txt.value)){
+            alert('Email không hợp lệ');
+            return;
+        }
+        alert('Chúc mừng bạn đăng ký thành công');
+    }
+</script>
+<footer style="min-height: 365px;">
+<div class="grid wide">
+<div class="row footer__container">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div style="text-align: center;" class="footer__sign">
+
+                <p>Cung cấp địa chỉ e-mail của bạn và bạn sẽ nhận được một phiếu giảm giá 10%</p>
+                <form action="" name="form1">
+                    <input id="Email_sale" type="email" placeholder="Name@email.com" name="email">
+                </form>
+            </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div  style="text-align: center;" class="footer__sign">
+            <p>Tiết kiệm 10% cho đơn hàng đầu tiên của bạn bằng cách đăng ký</p>
+            <button  class="btn-success btn" onclick="validEmail(document.form1.email)" >Đăng ký giảm giá</button>
+
+        </div>
+
+          <div  style="text-align: center;"  class="footer__content row">
+                <a class="col-lg-2 col-md-6 col-sm-6 col-xs-12"  href="" class="book__body-btn">Sách</a>
+                <a class="col-lg-2 col-md-6 col-sm-6 col-xs-12" href="./writer.html"> Nhà văn</a>
+                <a class="col-lg-2 col-md-6 col-sm-6 col-xs-12" href="./events.html"> Tin tức</a>
+                <a class="col-lg-2 col-md-6 col-sm-6 col-xs-12" href="./search.html"> Đặt mua</a>
+                 <a class="col-lg-2 col-md-6 col-sm-6 col-xs-12" href="./feedback.html"> Ủng hộ</a>
+                 <a class="col-lg-2 col-md-6 col-sm-6 col-xs-12" href="./member.html">Về</a>
+        </div>
+    </div>
+      
+    </div>
+  </div>
+  <div class="container-grild">
+    <p>Theo Chúng tôi</p>             
+    <p><a href="https://www.facebook.com/profile.php?id=100033582201464"><i class="fab fa-facebook"></i></a></p>
+    <p><a href="https://www.youtube.com/channel/UCmrOH34ltrhYoIsOSANOvZA"><i class="fab fa-youtube"></i></a></p>
+    <p class="footer__text">&copy; Copyright 2021 by <a href="" class="footer__link">GR1</a></p>
+  </div>
+</footer>
+</body>
+    <script src="./javascript.js"></script>
+</html>

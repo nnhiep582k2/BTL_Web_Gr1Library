@@ -1,0 +1,22 @@
+.content {
+	color: var(--primary-color);
+}
+.breadcrumb {
+	margin-top: 8px;
+	margin-bottom: 6px;
+}
+.title {
+	text-align: center;
+	margin-bottom: 0;
+}
+.breadcrumb-item.active {
+    color: #7b7d7e;
+}
+.content-fun {
+	margin-top: 20px;
+	margin-bottom: 0;
+}
+.content-fun-list {
+	padding: 0 0 0 50px;
+	margin: 0;
+}

@@ -1,0 +1,173 @@
+body {
+    background: #f4f4f4;
+    color: black;
+}
+header, footer {
+    background: rgb(37, 35, 35);
+}
+.nav__list-hov img {
+    cursor: pointer;
+}
+.subnav__list-hov li:hover {
+    background-color: #ccc;
+}
+.subnav__list-hov li:hover a {
+    color: black;
+}
+.nav-bar-icon {
+    color: white;
+}
+form p {
+    margin: 0;
+}
+.subnav__list-hov {
+    width: 200px;
+    display: none;
+    position: absolute;
+    list-style: none;   
+    padding: 0; 
+    transform: translateX(-60px);
+    box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.3);
+}
+.subnav__list-hov li {
+    background-color: var(--primary-color);
+    border: 2px solid var(--sub-color);
+    border-bottom: none;
+}
+.subnav__list-hov li:last-child {
+    border-bottom: 2px solid var(--sub-color);
+}
+.subnav__list-hov a {
+    text-decoration: none;
+    display: block;
+    color: var(--sub-color);
+    padding: 8px 16px;
+}
+.nav__list-hov:hover .subnav__list-hov {
+    display: block;
+}
+.nav__list-right {
+    display: flex;
+    justify-content: center;
+}
+.content {
+    margin-top: 30px;
+    padding: 12px 20px 20px;
+}
+.content__box {
+    background: white;
+}
+.ava {
+    border-radius: 50%;
+    border: 1px solid #ccc;
+}
+input[type='file'] {
+    font-size: 16px;
+}
+form {
+    font-size: 24px;
+}
+form label, form h5 {
+    text-align: right;
+    padding-right: 8px;
+}
+input {
+    font-size: 22px;
+    padding: 4px 6px;
+}
+.form-wrap {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+form h5 {
+    font-weight: 400;
+    font-size: 24px;
+    margin: 0;
+}
+form h5 ~ label{
+    font-size: 22px;
+    padding: 0 6px 0 0 ;
+}
+.wrap-forms {
+    display: flex;
+    flex-wrap: wrap;
+}
+.label-gender2 {
+    padding-left: 16px;
+}
+input[type="checkbox"] {
+    margin-right: 16px;
+}
+input[type="submit"] {
+    padding: 4px 12px;
+}
+input[type="reset"] {
+    margin-left: 16px;
+    padding: 4px 12px;
+}
+.form-wrap-last {
+    margin: 0 auto;
+    justify-content: center;
+}
+.table {
+    margin-top: 40px;
+}
+.title {
+    background: #000;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 7px 0;
+}
+.table th {
+    background: #000;
+    color: white;
+}
+.table tr:hover {
+    background-color: #ccc;
+    cursor: pointer;
+}
+.table-link {
+    text-decoration: none;
+    color: black;
+}
+.favorite_books {
+    text-align: center;
+}
+
+@media (max-width: 739px) {
+    .set_ava img {
+        display: block;
+        margin: 0 auto;
+    }
+    .set_ava {
+        padding: 0;
+    }
+    .form-wrap input[type="text"], input[type="tel"] {
+        display: block;
+        width: 100%;
+    }
+}
+
+@media (max-width: 320px) {
+    .table {
+        display: none;
+    }
+    .favorite {
+        margin-top: 14px;
+    }
+    .set_ava img {
+        width: 200px;
+    }
+    input[type="file"] {
+        display: block;
+        max-width: 100%;
+    }
+    input[type="email"] {
+        max-width:100%;
+    }
+}

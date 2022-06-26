@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GR1 Library - Chức năng, nhiệm vụ</title>
+    <link rel="icon" href="./assets/img/logo/logo_circle.png">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/function.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/font/fontawesome-free-5.15.4-web/css/all.min.css">
+</head>
+<body>
+     <!-- Begin header -->
+     <header>
+        <nav class="grid wide">
+            <ul class="nav__list">
+                <div class="nav__list-left">
+                    <li class="nav__lit-item">
+                        <a href="index.html" class="nav__list-link">
+                            <span class="nav__list-item-text">Trang chủ</span>
+                        </a>
+                    </li>
+                    <li class="nav__list-item">
+                        <span class="nav__list-link">
+                            <span class="nav__list-item-text">
+                                Giới thiệu
+                                <i class="nav__list-icon fas fa-sort-down"></i>
+                            </span>
+                        </span>
+                        <ul class="subnav__list-item">
+                            <li><a href="#">Chức năng, nhiệm vụ</a></li>
+                            <li><a href="./develop.html">Định hướng phát triển</a></li>
+                            <li><a href="./member.html">Thành viên</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav__list-item">
+                        <span class="nav__list-link">
+                            <span class="nav__list-item-text">
+                                Quy định
+                                <i class="nav__list-icon fas fa-sort-down"></i>
+                            </span>
+                        </span>
+                        <ul class="subnav__list-item">
+                            <li><a href="./howtouse.html">Sử dụng thư viện</a></li>
+                            <li><a href="./card.html">Thủ tục làm thẻ</a></li>
+                            <li><a href="./calendar.html">Lịch phục vụ</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav__list-item">
+                        <a href="./search.html" class="nav__list-link">
+                            <span class="nav__list-item-text">Tra cứu</span>
+                        </a>
+                    </li>
+                    <li class="nav__list-item">
+                        <span class="nav__list-link">
+                            <span class="nav__list-item-text">
+                                Dịch vụ 
+                                <i class="nav__list-icon fas fa-sort-down"></i>
+                            </span>
+                        </span>
+                        <ul class="subnav__list-item">
+                            <li><a href="./borrow.html">Mượn, trả tài liệu</a></li>
+                            <li><a href="./feedback.html">Phản hồi</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav__list-item">
+                        <a href="./contact.html" class="nav__list-link">
+                            <span class="nav__list-item-text">Liên hệ</span>
+                        </a>
+                    </li>  
+                </div>
+                <!-- Login -->
+              <div class="nav__list-right">
+                <li class="nav__list-item">
+                    <button type="button" class="btn btn-nav-login btn-nav-login-separate" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        Đăng nhập
+                    </button>
+                    <button type="button" class="btn btn-nav-register" data-bs-toggle="modal" data-bs-target="#registerModal">
+                        Đăng ký
+                    </button>
+                </li>
+            </div>
+            </ul>
+            <!-- Respon -->
+            <div class="nav-respon">
+                <label for="navigation" class="nav-bar"><i class="nav-bar-icon fas fa-bars"></i></label>
+            <input type="checkbox" id="navigation" hidden>
+            <div class="nav-bar-content">
+                <ul class="nav-bar-list">
+                    <div class="nav-list-left">
+                        <li class="nav__list-item">
+                            <a href="index.html" class="nav-list-link">
+                                <span class="nav-list-item-text">Trang chủ</span>
+                            </a>
+                        </li>
+                        <li class="nav-list-item">
+                            <span class="nav-list-link">
+                                <span class="nav-list-item-text">
+                                    <label for="subnav-bar" class="subnav-bar">
+                                        Giới thiệu
+                                        <i class="nav-list-icon fas fa-sort-down"></i>
+                                    </label>
+                                </span>
+                            </span>
+                            <input type="checkbox" id="subnav-bar" hidden>
+                            <ul class="subnav-list-item">
+                                <li><a href="#">Chức năng, nhiệm vụ</a></li>
+                                <li><a href="./develop.html">Định hướng phát triển</a></li>
+                                <li><a href="./member.html">Thành viên</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-list-item">
+                            <span class="nav-list-link">
+                                <span class="nav-list-item-text">
+                                    <label for="subnav-bar1" class="subnav-bar1">
+                                        Quy định
+                                        <i class="nav-list-icon fas fa-sort-down"></i>
+                                    </label>
+                                </span>
+                            </span>
+                            <input type="checkbox" id="subnav-bar1" hidden>
+                            <ul class="subnav-list-item">
+                                <li><a href="./howtouse.html">Sử dụng thư viện</a></li>
+                                <li><a href="./card.html">Thủ tục làm thẻ</a></li>
+                                <li><a href="./calendar.html">Lịch phục vụ</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="./search.html" class="nav-list-link">
+                                <span class="nav-list-item-text">Tra cứu</span>
+                            </a>
+                        </li>
+                        <li class="nav-list-item">
+                            <span class="nav-list-link">
+                                <span class="nav-list-item-text">
+                                    <label for="subnav-bar2" class="subnav-bar2">
+                                        Dịch vụ 
+                                        <i class="nav-list-icon fas fa-sort-down"></i>
+                                    </label>
+                                </span>
+                            </span>
+                            <input type="checkbox" id="subnav-bar2" hidden>
+                            <ul class="subnav-list-item">
+                                <li><a href="./borrow.html">Mượn, trả tài liệu</a></li>
+                                <li><a href="./feedback.html">Phản hồi</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="./contact.html" class="nav-list-link">
+                                <span class="nav-list-item-text">Liên hệ</span>
+                            </a>
+                        </li>  
+                    </div>
+                    <!-- Login -->
+                  <div class="nav-list-right">
+                    <li class="nav-list-item">
+                        <button type="button" class="btn btn-nav-login btn-nav-login-separate" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            Đăng nhập
+                        </button>
+                        <button type="button" class="btn btn-nav-register" data-bs-toggle="modal" data-bs-target="#registerModal">
+                            Đăng ký
+                        </button>
+                    </li>
+                </div>
+                </ul>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+   <!-- The Modal -->
+<div class="modal" id="loginModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Đăng nhập</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form action="login.html" class="form-modals">
+              <div class="mb-3">
+                <label for="gmail" class="form-label form-account">Email:</label>
+                <input type="email" class="form-control" id="gmail" placeholder="Nhập email" name="email">
+              </div>
+              <div class="mb-3">
+                <label for="pwd" class="form-label form-pwd">Mật khẩu:</label>
+                <div class="wrap-pwd">
+                  <input type="password" class="form-control enter-pwd" id="pwd" placeholder="Nhập mật khẩu" name="pswd">
+                  <i class="show-pwd fas fa-eye" onclick="showPass()"></i>
+                </div>
+              </div>
+              <div class="form-check mb-3">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" name="remember" checked> Nhớ mật khẩu
+                </label>
+                  <div class="forget"><a href="./changepsw.html">Quên mật khẩu?</a></div>
+              </div>
+              <input type="button" onclick="login()" class="btn btn-login btn-submit btn-primary" value="Đăng nhập">
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="registerModal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Đăng ký</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <form class="form-modal" action="index.html">
+              <div class="mb-3">
+                  <label for="usname" class="form-label usNamep">Tên đầy đủ:</label>
+                  <input type="text" class="form-control" id="usname" placeholder="Nhập tên bạn" name="name">
+                </div>
+                <div class="mb-3">
+                  <label for="mail" class="form-label form-email">Email:</label>
+                  <input type="email" class="form-control" id="mail" placeholder="Nhập email" name="email">
+                </div>
+                <div class="mb-3">
+                  <label for="pass" class="form-label form-pass">Mật khẩu:</label>
+                  <div class="wrap-pwd wrap-pwd1">
+                      <input type="password" class="form-control enter-pwd1" id="pass" placeholder="Nhập mật khẩu" name="pswd">
+                      <i class="show-pwd fas fa-eye" onclick="showPass1()"></i>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="pass2" class="form-label form-pass2">Xác nhận mật khẩu:</label>
+                  <div class="wrap-pwd wrap-pwd2">
+                      <input type="password" class="form-control enter-pwd2" id="pass2" placeholder="Nhập lại mật khẩu" name="cf-pswd">
+                      <i class="show-pwd fas fa-eye" onclick="showPass2()"></i>
+                  </div>
+                </div>
+                <div class="form-check mb-3">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="remember" id="checkBox" checked> Đồng ý mọi điều khoản
+                  </label>
+                </div>
+                <input type="button" class="btn btn-register btn-submit btn-primary" onclick="register()" value="Đăng ký">
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slider -->
+    <div id="slider" class="carousel slide grid wide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#slider" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#slider" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#slider" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <a href="" class="slider__link">
+                    <img src="./assets/img/slider/slider1.jfif" alt="Slide 1" class="slide__img d-block">
+                    <div class="carousel-caption slider__content">
+                        <h3>GR1 Library</h3>
+                        <p>Thư viện trực tuyến, hàng đầu miền Bắc</p>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="" class="slider__link">
+                    <img src="./assets/img/slider/slider2.jpg" alt="Slide 2" class="slide__img d-block">
+                    <div class="carousel-caption slider__content">
+                        <h3>Our team</h3>
+                        <p>Những con người nhiệt huyết, chăm chỉ</p>
+                    </div> 
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="" class="slider__link">
+                    <img src="./assets/img/slider/slider3.jpg" alt="Slide 3" class="slide__img d-block">
+                    <div class="carousel-caption slider__content">
+                        <h3>Top 5</h3>
+                        <p>Tổng hợp 5 cuốn sách hay nhất mọi thời đại</p>
+                    </div>
+                </a>  
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#slider" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#slider" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <!-- Begin main -->
+    <main class="container grid wide">
+        <div class="main row">
+            <!-- content -->
+            <div class="content col-lg-12">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="./index.html">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="#">Giới thiệu</a></li>
+                    <li class="breadcrumb-item active">Chức năng, nhiệm vụ</li>
+                </ul>
+                <h2 class="title" >Chức năng, nhiệm vụ</h2>
+                <p class="content-fun">
+                    +) GR1 Library có chức năng tham mưu cho Hiệu trưởng trong việc quản lý, tổng hợp, đề xuất ý kiến, tổ chức thực hiện các công việc theo chức năng, nhiệm vụ được Hiệu trưởng giao.<br>
+
+                    +) <span>Ngoài ra, GR1 Library có chức năng, nhiệm vụ:</span> Tổ chức, quản lý việc thu thập, xử lý, lưu trữ và cung cấp thông tin nhằm phục vụ công tác đào tạo, nghiên cứu khoa học và chuyển giao công nghệ của Nhà trường.<br>
+
+                    +) <span>Đối tượng bạn đọc:</span> giảng viên, cán bộ nghiên cứu, nghiên cứu sinh, học viên cao học và bạn đọc khắp nơi có nhu cầu.<br>
+
+                    +) <span>Phương thức phục vụ:</span> GR1 Library tổ chức kho mở tại các phòng đọc, tạo điều kiện thuận lợi cho bạn đọc có thể tiếp cận trực tiếp với tài liệu một cách nhanh chóng, kịp thời.<br>
+                    
+                    +) <span>Hệ thống các phòng đọc của GR1 Library:</span><br>
+                    <ul class="content-fun-list">
+                        <li>Phòng đọc tiếng Việt: 1000 chỗ ngồi.</li>
+                        <li>Phòng mượn giáo trình, sách tham khảo về nhà.</li>
+                    </ul>
+                    
+                    +) <span style="font-weight: bold;">Hệ thống kho lưu:</span><br>
+                    <ul class="content-fun-list">
+                        <li>Kho lưu sách nội văn.</li>
+                        <li>Kho lưu sách ngoại văn.</li>
+                    </ul>
+                    
+                    +) <span style="font-weight: bold;">Dịch vụ thông tin:</span><br>
+                    <ul class="content-fun-list">
+                        <li>Hoạt động Thông tin - Thư mục: cung cấp danh mục tài liệu mới, danh mục tài liệu theo chủ đề,…</li>
+                        <li>Đáp ứng yêu cầu thông tin cho mọi đối tượng: giảng viên, nhà nghiên cứu, học viên và sinh viên,… qua các dịch vụ phổ biến thông tin có chọn lọc, dịch vụ bao gói thông tin,…</li>
+                        <li>Mượn, photo tài liệu,...</li>
+                        <li>Tư vấn tìm tài liệu, in ấn luận văn Thạc sỹ.</li>
+                    </ul>
+
+                    +) GR1 Library từng bước xây dựng cơ sở vật chất và nguồn nhân lực phấn đấu trở thành một Thư viện điện tử hiện đại với nguồn lực thông tin phong phú, đa dạng hoá các loại hình phục vụ và hướng tới việc liên thông với các mạng thông tin thư viện trong và ngoài nước nhằm chia sẻ thông tin, khai thác tốt nguồn thông tin để đáp ứng nhu cầu thông tin ngày càng cao của cán bộ, giảng viên và sinh viên, phục vụ đắc lực cho công tác đào tạo và NCKH của nhà trường.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Begin footer -->
+    <footer>
+        <div class="grid">
+            <div class="row footer__container container__left">
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                      <img src="assets/img/logo/logo.png" alt="">
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                   <p>THƯ VIỆN GR1  - TRƯỜNG ĐẠI HỌC GIAO THÔNG VẬN TẢI </p>
+                   <p>Địa chỉ: Số 3 phố Cầu Giấy, P.Láng Thượng, Q.Đống Đa, Hà Nội</p>
+                   <p>Điện thoại: (84-24) 9401 7947, Email: <a href="">GR1@utc.edu.vn</a></p>        
+                </div>
+                 <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3724.0977335552943!2d105.80095071457927!3d21.028775093154533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1zU-G7kSAzIHBo4buRIEPhuqd1IEdp4bqleSwgUC5Mw6FuZyBUaMaw4bujbmcsIFEuxJDhu5FuZyDEkGEsIEjDoCBO4buZaQ!5e0!3m2!1sen!2s!4v1635424594072!5m2!1sen!2s" width="200px" height="200px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+          <div class="container-grild">
+            <p>Theo Chúng tôi</p>             
+            <p><a href="https://www.facebook.com/profile.php?id=100033582201464"><i class="fab fa-facebook"></i></a></p>
+            <p><a href="https://www.youtube.com/channel/UCmrOH34ltrhYoIsOSANOvZA"><i class="fab fa-youtube"></i></a></p>
+            <p>
+                &copy; Copyright 2021 by
+                 <a href="" class="footer__link">GR1</a>
+            </p>
+          </div>
+    </footer>
+</body>
+    <script src="./javascript.js"></script>
+</html>

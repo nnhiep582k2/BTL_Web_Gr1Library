@@ -1,0 +1,39 @@
+.nav__list-hov img {
+    cursor: pointer;
+}
+.subnav__list-hov li:hover {
+    background-color: #ccc;
+}
+.subnav__list-hov li:hover a {
+    color: black;
+}
+.subnav__list-hov {
+    display: none;
+    width: 200px;
+    position: absolute;
+    list-style: none;   
+    padding: 0;
+    transform: translateX(-60px);
+    box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.3);
+}
+.subnav__list-hov li {
+    background-color: var(--primary-color);
+    border: 2px solid var(--sub-color);
+    border-bottom: none;
+}
+.subnav__list-hov li:last-child {
+    border-bottom: 2px solid var(--sub-color);
+}
+.nav__list-right {
+    display: flex;
+    justify-content: center;
+}
+.subnav__list-hov a {
+    text-decoration: none;
+    display: block;
+    color: var(--sub-color);
+    padding: 8px 16px;
+}
+.nav__list-hov:hover .subnav__list-hov {
+    display: block;
+}

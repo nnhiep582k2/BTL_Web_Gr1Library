@@ -1,0 +1,28 @@
+.content {
+	color: var(--primary-color);
+}
+.breadcrumb {
+	margin-top: 8px;
+	margin-bottom: 6px;
+}
+.title {
+	text-align: center;
+	margin-bottom: 0;
+}
+.breadcrumb-item.active {
+    color: #7b7d7e;
+}
+.content__title p {
+	text-align: center;
+	font-size: 18px;
+	font-style: oblique;
+}
+.content__text-title {
+	font-weight: bold;
+}
+.content__text-detail {
+	margin-bottom: 10px;
+}
+.content__text-detail p {
+	margin-bottom: 0;
+}

@@ -1,0 +1,95 @@
+
+
+
+
+
+/* mobile: <740px*/
+
+@media only screen and (max-width:46.1875em){
+  .books__body-menu-respon{
+    display: none;
+  }
+
+  .books__body-menu-icon{
+    display: inline-block;
+  }
+
+  .books__body-list{
+    width: 100%;
+    margin-left: 14px;
+    margin-top: 64px;
+  }
+
+  .books__header h1{
+    font-size: 35px;
+  }
+
+  .books__header{
+    height: 207px;
+  }
+
+  
+   
+}
+
+/* table: >=740px <1024px */
+@media only screen and (min-width:46.25em) and (max-width:63.9375em){
+
+
+  .books__body-menu-respon{
+    display: none;
+  }
+
+  .books__body-list{
+    width: 100%;
+    margin-left: 14px;
+
+    /* Thêm Kiên */
+    margin-top: 64px;
+  }
+
+  .books__body-menu-icon{
+    display: inline-block;
+  }
+
+  
+
+  
+ 
+
+ 
+
+	
+     
+}
+
+
+/* PC low resolution */
+@media only screen and (min-width:46.25em) and (max-width:60.90625em){
+
+
+ 
+}
+
+
+
+
+
+/* pc : >=1024px */
+@media only screen  and (min-width: 64em){
+  .books__body-menu-respon{
+    display: block;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+

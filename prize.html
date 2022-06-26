@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GR1 Library - Sách</title>
+    <link rel="icon" href="./assets/img/logo/logo_circle.png">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/font/fontawesome-free-5.15.4-web/css/all.min.css">
+    <style>
+         body{
+            background-image: var(--sub-color);
+        }
+        .nav__list-item-text:hover{
+            color: var(--sub-color);
+        }
+        header{
+            background-color: var(--black-color);
+            z-index: 3;
+        }
+        :root {
+            --primary-color: rgba(126, 111, 111, 0.5);
+            --sub-color: #fff;
+            --black-color:rgb(29, 27, 27);
+            --header-height: 54px;
+        }
+        .subnav__list-item li {
+            background: var(--black-color);
+        }   
+        .container{
+            min-width: 76%;
+             margin: 0 auto;
+        }
+         .content{
+             padding: 0px;
+             background-color: var(--sub-color);
+            min-width: 1005px;
+            box-shadow: none;
+         }
+         .content__header::after{
+                display: block;
+                content: "";
+                background-color: #000;
+                height: 6px;
+                width: 104.4%;
+                position: relative;
+                top: 40px;
+                left: -27px; 
+         }
+         .content__header h2{
+             color: var(--sub-color);
+         }
+         .content__header img{
+            height: 150px;
+            width: 224px;
+            border-radius: 50%;
+            box-shadow: 0px 10px 10px #000;
+         }
+         .content__body-first p{
+                color: var(--black-color);
+                font-size:20px;
+                font-weight:600;
+                letter-spacing: 2px;
+                line-height:25px;
+                text-align:center;
+                text-transform:uppercase;
+                margin: 40px 0px;
+                font-size: 30px;
+         }
+
+         .content__body-first-list span{
+             display: flex;
+            margin-top: 20px;margin-bottom: 20px;
+         }
+
+         .content__body-first-list span p a{
+            text-decoration: none;
+            padding: 20px;
+            color: var(--black-color);
+            border: 1px solid var(--black-color);
+            border-radius: 20px;
+            margin-left: 20px;
+            margin-right: 10px;
+            display: inline-block;
+            font-size: 20px !important;
+         }
+         .content__body-first-list {
+            margin-bottom: -43px;
+        }
+         
+         .content__body-first-item a:hover{
+            background-color: #ccc;
+           border-radius: 50px;
+           animation: border 1s ease;
+           color: var(--sub-color);
+         }
+
+         .content__body-first-item a:hover::after{
+            content: "";
+            display: block;
+            width: 70px;
+            background-color:var( --primary-color);
+            height: 5px;
+            position: relative;
+            border-radius: 50%;
+            animation: item 1s ease;
+        }
+
+         .content__body-writer{
+             padding: 0px;
+         }
+
+         .content__body-writer img{
+             width: 417px;
+             border-radius: 20px;
+             box-shadow: 0px 10px 10px #000;
+         }
+
+         .content__body-writer h1 a{
+            text-decoration: none;
+            color: var(--black-color);
+         }
+
+         .content__body-logo{
+            text-align: center;
+            margin: 150px 0px 0px 0px;
+         }
+
+         .content__body-logo p{
+             font-family:Arnhem;
+            font-size:32px;
+            font-weight:500;
+            line-height:38px;   
+         }
+
+         footer {
+                min-height: 414px;
+                background-color:#eeeeee;
+                display: block;
+                font-weight:500;
+               font-family: Arnhem;
+            }
+
+            .footer__container {
+                color: var(--black-color);
+            }
+
+            .footer__sign {
+                margin: 20px;
+                font-size: 21px;
+                padding:20px 0px;
+            }
+
+            .footer__sign input{
+                background-color: #ffffff;
+                font-family:Calibre;
+                font-size:18px;
+                font-weight:500;
+                line-height:17px;
+                padding:15px;
+            }
+
+            .footer__sign button{
+                background-color: red;
+            }
+
+            .footer__sign button:hover{
+                color: var(--sub-color);
+                background-color: #ccc;
+            }
+            .footer__content a{
+                text-decoration: none;
+                color: var(--black-color);
+                font-family: sans-serif;
+            }
+
+            .footer__content a:hover{
+                color: red;
+            }
+
+            footer .container-grild{
+                background-color: var(--black-color);
+                margin-top: 50px;
+                padding: 20px;
+            }
+
+            footer .container-grild p{
+                display: inline-block;
+                padding: 20px;
+                font-size: 25px;
+            }
+
+            footer .container-grild p a{
+                color: var(--sub-color);
+                font-size: 25px;
+            }
+
+            footer .container-grild p a:hover{
+                color: red;
+            }
+
+        main{
+           background-color: var(--sub-color);
+
+       }
+
+       .prize__header{
+           background-image: url(https://images.pexels.com/photos/904616/pexels-photo-904616.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+            background-repeat: no-repeat;
+            height: 275px;
+            width: 100%;
+            padding: 20px;
+            background-size: cover;
+            margin-top: 54px;
+
+        }
+
+        .prize__header h1{
+            color: var(--sub-color);
+            font-family: system-ui;
+            font-size:60px;
+            font-weight:900;
+            line-height:72px;
+        }
+        .prize__body{
+
+            width: 85%;
+      
+            margin: 48px auto;
+        }
+
+        .prize__body > h2{
+            color: var(--black-color);
+            text-align: center;
+            font-family: system-ui;
+            font-size:60px;
+            font-weight:900;
+            line-height:72px;
+            margin-bottom: 38px;
+            display: none;
+
+        }
+
+        .prize__body-head h3{
+            font-size: 20px;
+            font-weight: 200;
+            color: #828ab7;
+        }
+
+        .prize__body-head ul{
+            display: flex;
+        }
+
+      
+
+        .prize__body-head li{
+            list-style-type: none;
+            padding: 0px 5px;
+            margin: 0px 6px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .prize__body-head li a{
+            color:#02729e;
+            text-decoration: none;
+            font-size:18px;
+            line-height:21px;
+        }
+
+        .prize__body-head li:hover{
+            background-color: #ccc;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px black;
+        }
+
+        .prize__body-head li:hover a{
+            color: var(--sub-color);
+        }
+
+        .prize__body-head li:nth-child(4){
+            background-color: #ccc;
+            border-radius: 10px;
+       
+        }
+
+        .prize__body-head li:nth-child(4) a{
+            color: var(--sub-color);
+        }
+
+        .prize__body-head h2{
+            color:#45403c;
+            font-size:28px;
+            font-weight:500;
+            line-height:30.8px;
+            margin-top: 20px;
+        }
+
+        .prize__body-list {
+            background-color: #f1f1f1;
+            width: 100%;
+            padding: 20px 20px 35px 20px;
+            position: relative;
+        }
+
+        .prize__body-list h3{
+            color: #008000;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .prize__body-items {
+            background-color: var(--sub-color);
+            margin: 0px;
+            padding: 10px 0px;
+            height: 450px;
+            border-radius: 50px;
+            width: 100%;
+            cursor: pointer;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .prize__body-items:hover{
+            height: 400px;
+            width: 80%;
+            border: 1px solid red;
+           
+            box-shadow: 0px 10px 10px black;
+            margin: 0 auto;
+
+        }
+
+        .prize__body-items:hover .prize__body-items-cost{
+            display:inline-block;
+        }
+
+        .prize__body-items-cost{
+            position: absolute;
+            top: 340px;
+            display: none;
+              text-align: center;
+        }
+
+        .prize__body-items-cost p{
+            padding: 80px 0px;
+            text-align: center;
+
+        }
+
+        span.prize__body-cost-icon {
+            background-color: rgb(253, 7, 7);
+            padding: 3px;
+            border-radius: 19px;
+            font-size: 17px;
+            margin-left: 3px;
+            text-align: center;
+        }
+
+        span.prize__body-cost-icon:hover{
+            background-color: rgb(243, 50, 50);
+        }
+
+       
+        span.prize__body-cost-icon  i{
+            color: var(--sub-color);
+            text-align: center;
+        }
+
+        .prize__body-items a {
+            text-decoration: none;
+        }
+
+        .prize__body-items a p{
+            color:#02729e;
+            font-size:20px;
+            line-height:24px;
+            margin-top: 20px;
+           
+        }
+
+        .prize__body-items a p:first-child{
+            border-left: 3px solid #ffa500;
+           padding: 0px 6px;
+        }
+
+
+        .prize__body-items a p i{
+            color: #ffa500;
+            margin-left: 20px;
+        }
+
+        .prize__body-items a p:hover{
+            color: red;
+        }
+
+        .prize__body-items-cost p .content{
+            color: red;
+         
+            font-family: Arnhem;
+            margin-left: 21px;
+            margin-bottom: 10px;
+        }
+
+
+       .prize__body-items>p{
+            color:#404040;
+            margin-top: 20px;
+            font-size: 14px;
+            line-height:20.79px;
+            border-left: 5px solid orange;;
+            padding: 0px 20px;
+           
+       }
+
+       .prize__body-items>p i{
+           color: #ffa500;
+           font-size: 15px;
+           margin-right: 40px;
+   
+       }
+
+       .prize__body-items a img{
+           width: 100%;
+           border-radius: 50px;
+           height: 100%;
+       }
+
+        .prize__body-menu-icon i{
+        font-size: 21px;
+        display: inline-block;
+        color: black;
+       }
+
+       .prize__body-menu-icon i:hover{
+        color: #fff;
+       }
+
+       .prize__body-menu-icon:hover{
+        background-color: #ccc;
+
+       }
+
+       .prize__body-menu-icon{
+             width: 51px;
+            height: -33%;
+            cursor: pointer;
+            padding: 10px 16px;
+
+            display: inline-block;
+            
+            border: 1px solid black;
+            border-radius: 10px;
+            position: absolute;
+            right: 8%;
+            display: none;
+
+       }
+
+       .prize__body-items-info.col-lg-3.col-md-6.col-sm-6.col-xs-12 {
+             margin-top: 41px;
+        }
+
+    </style>
+</head>
+    <link rel="stylesheet" href="assets//css/res_prize.css">
+<body>
+     <!-- Begin header -->
+     <header>
+        <nav class="grid wide">
+            <ul class="nav__list">
+                <div class="nav__list-left">
+                    <li class="nav__lit-item">
+                        <a href="index.html" class="nav__list-link">
+                            <span class="nav__list-item-text">Trang chủ</span>
+                        </a>
+                    </li>
+                    <li class="nav__list-item">
+                        <span class="nav__list-link">
+                            <span class="nav__list-item-text">
+                                Giới thiệu
+                                <i class="nav__list-icon fas fa-sort-down"></i>
+                            </span>
+                        </span>
+                        <ul class="subnav__list-item">
+                            <li><a href="./function.html">Chức năng, nhiệm vụ</a></li>
+                            <li><a href="./develop.html">Định hướng phát triển</a></li>
+                            <li><a href="./member.html">Thành viên</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav__list-item">
+                        <span class="nav__list-link">
+                            <span class="nav__list-item-text">
+                                Quy định
+                                <i class="nav__list-icon fas fa-sort-down"></i>
+                            </span>
+                        </span>
+                        <ul class="subnav__list-item">
+                            <li><a href="./howtouse.html">Sử dụng thư viện</a></li>
+                            <li><a href="./card.html">Thủ tục làm thẻ</a></li>
+                            <li><a href="./calendar.html">Lịch phục vụ</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav__list-item">
+                        <a href="./search.html" class="nav__list-link">
+                            <span class="nav__list-item-text">Tra cứu</span>
+                        </a>
+                    </li>
+                    <li class="nav__list-item">
+                        <span class="nav__list-link">
+                            <span class="nav__list-item-text">
+                                Dịch vụ 
+                                <i class="nav__list-icon fas fa-sort-down"></i>
+                            </span>
+                        </span>
+                        <ul class="subnav__list-item">
+                            <li><a href="./borrow.html">Mượn, trả tài liệu</a></li>
+                            <li><a href="./feedback.html">Phản hồi</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav__list-item">
+                        <a href="./contact.html" class="nav__list-link">
+                            <span class="nav__list-item-text">Liên hệ</span>
+                        </a>
+                    </li>  
+                </div>
+                <!-- Login -->
+              <div class="nav__list-right">
+                <li class="nav__list-item">
+                    <button type="button" class="btn btn-nav-login btn-nav-login-separate" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        Đăng nhập
+                    </button>
+                    <button type="button" class="btn btn-nav-register" data-bs-toggle="modal" data-bs-target="#registerModal">
+                        Đăng ký
+                    </button>
+                </li>
+            </div>
+            </ul>
+            <!-- Respon -->
+            <div class="nav-respon">
+                <label for="navigation" class="nav-bar"><i class="nav-bar-icon fas fa-bars"></i></label>
+            <input type="checkbox" id="navigation" hidden>
+            <div class="nav-bar-content">
+                <ul class="nav-bar-list">
+                    <div class="nav-list-left">
+                        <li class="nav__list-item">
+                            <a href="index.html" class="nav-list-link">
+                                <span class="nav-list-item-text">Trang chủ</span>
+                            </a>
+                        </li>
+                        <li class="nav-list-item">
+                            <span class="nav-list-link">
+                                <span class="nav-list-item-text">
+                                    <label for="subnav-bar" class="subnav-bar">
+                                        Giới thiệu
+                                        <i class="nav-list-icon fas fa-sort-down"></i>
+                                    </label>
+                                </span>
+                            </span>
+                            <input type="checkbox" id="subnav-bar" hidden>
+                            <ul class="subnav-list-item">
+                                <li><a href="./function.html">Chức năng, nhiệm vụ</a></li>
+                                <li><a href="./develop.html">Định hướng phát triển</a></li>
+                                <li><a href="./member.html">Thành viên</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-list-item">
+                            <span class="nav-list-link">
+                                <span class="nav-list-item-text">
+                                    <label for="subnav-bar1" class="subnav-bar1">
+                                        Quy định
+                                        <i class="nav-list-icon fas fa-sort-down"></i>
+                                    </label>
+                                </span>
+                            </span>
+                            <input type="checkbox" id="subnav-bar1" hidden>
+                            <ul class="subnav-list-item">
+                                <li><a href="./howtouse.html">Sử dụng thư viện</a></li>
+                                <li><a href="./card.html">Thủ tục làm thẻ</a></li>
+                                <li><a href="./calendar.html">Lịch phục vụ</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="./search.html" class="nav-list-link">
+                                <span class="nav-list-item-text">Tra cứu</span>
+                            </a>
+                        </li>
+                        <li class="nav-list-item">
+                            <span class="nav-list-link">
+                                <span class="nav-list-item-text">
+                                    <label for="subnav-bar2" class="subnav-bar2">
+                                        Dịch vụ 
+                                        <i class="nav-list-icon fas fa-sort-down"></i>
+                                    </label>
+                                </span>
+                            </span>
+                            <input type="checkbox" id="subnav-bar2" hidden>
+                            <ul class="subnav-list-item">
+                                <li><a href="./borrow.html">Mượn, trả tài liệu</a></li>
+                                <li><a href="./feedback.html">Phản hồi</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="./contact.html" class="nav-list-link">
+                                <span class="nav-list-item-text">Liên hệ</span>
+                            </a>
+                        </li>  
+                    </div>
+                    <!-- Login -->
+                  <div class="nav-list-right">
+                    <li class="nav-list-item">
+                        <button type="button" class="btn btn-nav-login btn-nav-login-separate" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            Đăng nhập
+                        </button>
+                        <button type="button" class="btn btn-nav-register" data-bs-toggle="modal" data-bs-target="#registerModal">
+                            Đăng ký
+                        </button>
+                    </li>
+                </div>
+                </ul>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+  <!-- The Modal -->
+<div class="modal" id="loginModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Đăng nhập</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form action="login.html" class="form-modals">
+              <div class="mb-3">
+                <label for="gmail" class="form-label form-account">Email:</label>
+                <input type="email" class="form-control" id="gmail" placeholder="Nhập email" name="email">
+              </div>
+              <div class="mb-3">
+                <label for="pwd" class="form-label form-pwd">Mật khẩu:</label>
+                <div class="wrap-pwd">
+                  <input type="password" class="form-control enter-pwd" id="pwd" placeholder="Nhập mật khẩu" name="pswd">
+                  <i class="show-pwd fas fa-eye" onclick="showPass()"></i>
+                </div>
+              </div>
+              <div class="form-check mb-3">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" name="remember" checked> Nhớ mật khẩu
+                </label>
+                  <div class="forget"><a href="./changepsw.html">Quên mật khẩu?</a></div>
+              </div>
+              <input type="button" onclick="login()" class="btn btn-login btn-submit btn-primary" value="Đăng nhập">
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="registerModal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Đăng ký</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <form class="form-modal" action="index.html">
+              <div class="mb-3">
+                  <label for="usname" class="form-label usNamep">Tên đầy đủ:</label>
+                  <input type="text" class="form-control" id="usname" placeholder="Nhập tên bạn" name="name">
+                </div>
+                <div class="mb-3">
+                  <label for="mail" class="form-label form-email">Email:</label>
+                  <input type="email" class="form-control" id="mail" placeholder="Nhập email" name="email">
+                </div>
+                <div class="mb-3">
+                  <label for="pass" class="form-label form-pass">Mật khẩu:</label>
+                  <div class="wrap-pwd wrap-pwd1">
+                      <input type="password" class="form-control enter-pwd1" id="pass" placeholder="Nhập mật khẩu" name="pswd">
+                      <i class="show-pwd fas fa-eye" onclick="showPass1()"></i>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="pass2" class="form-label form-pass2">Xác nhận mật khẩu:</label>
+                  <div class="wrap-pwd wrap-pwd2">
+                      <input type="password" class="form-control enter-pwd2" id="pass2" placeholder="Nhập lại mật khẩu" name="cf-pswd">
+                      <i class="show-pwd fas fa-eye" onclick="showPass2()"></i>
+                  </div>
+                </div>
+                <div class="form-check mb-3">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="remember" id="checkBox" checked> Đồng ý mọi điều khoản
+                  </label>
+                </div>
+                <input type="button" class="btn btn-register btn-submit btn-primary" onclick="register()" value="Đăng ký">
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <!-- Begin main -->
+     <div class="prize__header">
+        <h1>Giải Thưởng</h1>
+        
+    </div>
+  
+
+    <div class="prize__body">
+        <div class="prize__body-menu-icon">
+                 <i class="fas fa-bars"></i>
+            </div>
+        <h2>
+            <i class="fas fa-medal"></i>
+        Giải thưởng
+        </h2>
+   
+        <div class="prize__body-responsive row prize__body-head">
+            <h3 style="padding: 0px;" class="col-lg-3 col-md-2 col-sm-4 col-sx-12">
+                Khám phá danh mục
+            </h3>
+            
+            <ul  style="padding: 0px;"  class="col-lg-9 col-md-10 col-sm-8 col-sx-12" >
+                <li class=""><a href="../index.html">Trang chủ</a></li>
+                <li class=""><a href="./books.html">Sách</a></li>
+                  <li class=""><a href="./books.html">Sách mới</a></li>
+                <li class=""><a href="">Giải thưởng</a></li>
+                <li class=""><a href="./search.html">Bán chạy</a></li>
+            </ul>
+
+          
+            
+        </div>
+
+ 
+
+          
+         <div class="prize__body-list">
+             <h3 class="">
+                                <i class="fas fa-check"></i>
+                                Sẵn ngay bây giờ
+            </h3>     
+            <div class="row">
+                                    
+                <div  class="  prize__body-items-info col-lg-3 col-md-6 col-sm-6 col-xs-12">
+
+                
+                        <div   class=" prize__body-items row">
+                            <a  href="https://shopee.vn/S%C3%A1ch-AZ-Drama-Nu%C3%B4i-T%C3%B4i-L%E1%BB%9Bn-Lo%C3%A0i-Ng%C6%B0%E1%BB%9Di-D%E1%BA%A1y-T%C3%B4i-Kh%C3%B4n-i.154779484.9267930865?sp_atk=43d3f5f3-b08a-4168-bf7d-9218be4d8057"  class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                
+                                <img src="https://vnn-imgs-f.vgcloud.vn/2021/10/18/09/kho-sach-dong-gia-hoi-chi-co-o-shopee-1.jpg" alt="">
+                    
+                            </a>
+
+                        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <a href="https://shopee.vn/S%C3%A1ch-AZ-Drama-Nu%C3%B4i-T%C3%B4i-L%E1%BB%9Bn-Lo%C3%A0i-Ng%C6%B0%E1%BB%9Di-D%E1%BA%A1y-T%C3%B4i-Kh%C3%B4n-i.154779484.9267930865?sp_atk=47d85323-3180-447b-86e5-eeba000579ac">
+                                    <p>
+                                        <i class="fas fa-award"></i>
+                                        Drama nuôi tôi lớn - Loài người dạy tôi khôn</p>
+                                    <p>Tác giả trẻ Pương Pương</p>
+                                </a>
+                               
+                            </div>
+                            <div class="prize__body-items-cost">
+                                <p><span class="content">₫71.280</span>
+                                   <a href="https://shopee.vn/S%C3%A1ch-AZ-Drama-Nu%C3%B4i-T%C3%B4i-L%E1%BB%9Bn-Lo%C3%A0i-Ng%C6%B0%E1%BB%9Di-D%E1%BA%A1y-T%C3%B4i-Kh%C3%B4n-i.154779484.9267930865?sp_atk=47d85323-3180-447b-86e5-eeba000579ac">
+                                    <span class="prize__body-cost-icon">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </span>
+                                   </a>
+                                </p>
+                            </div>
+                        </div>
+                </div>
+                <div  class="  prize__body-items-info col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                            <div   class=" prize__body-items row">
+                                <a  href="https://shopee.vn/S%C3%A1ch-Combo-C%C3%A2n-b%E1%BA%B1ng-c%E1%BA%A3m-x%C3%BAc-c%E1%BA%A3-l%C3%BAc-b%C3%A3o-gi%C3%B4ng-N%C3%B3ng-gi%E1%BA%ADn-l%C3%A0-b%E1%BA%A3n-n%C4%83ng-T%C4%A9nh-l%E1%BA%B7ng-l%C3%A0-b%E1%BA%A3n-l%C4%A9nh(combo-l%E1%BA%BB)-i.284634361.4447264822?sp_atk=4de517a0-f3a4-4114-b21a-5f44939b2aa4"  class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <img src="https://vnn-imgs-f.vgcloud.vn/2021/10/18/09/kho-sach-dong-gia-hoi-chi-co-o-shopee-2.jpg" alt="">
+                                </a>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <a href="https://shopee.vn/S%C3%A1ch-Combo-C%C3%A2n-b%E1%BA%B1ng-c%E1%BA%A3m-x%C3%BAc-c%E1%BA%A3-l%C3%BAc-b%C3%A3o-gi%C3%B4ng-N%C3%B3ng-gi%E1%BA%ADn-l%C3%A0-b%E1%BA%A3n-n%C4%83ng-T%C4%A9nh-l%E1%BA%B7ng-l%C3%A0-b%E1%BA%A3n-l%C4%A9nh(combo-l%E1%BA%BB)-i.284634361.4447264822?sp_atk=4de517a0-f3a4-4114-b21a-5f44939b2aa4">
+                                        <p>
+                                            <i class="fas fa-award"></i>
+                                            Nóng giận là bản năng Tĩnh lặng là bản lĩnh</p>
+                                        <p>Tác giả Tống Mặc</p>
+                                    </a>
+                                   
+                                </div>
+                                <div class="prize__body-items-cost">
+                                    <p><span class="content">
+                                        ₫71.200 </span>
+                                    <a href="https://shopee.vn/S%C3%A1ch-Combo-C%C3%A2n-b%E1%BA%B1ng-c%E1%BA%A3m-x%C3%BAc-c%E1%BA%A3-l%C3%BAc-b%C3%A3o-gi%C3%B4ng-N%C3%B3ng-gi%E1%BA%ADn-l%C3%A0-b%E1%BA%A3n-n%C4%83ng-T%C4%A9nh-l%E1%BA%B7ng-l%C3%A0-b%E1%BA%A3n-l%C4%A9nh(combo-l%E1%BA%BB)-i.284634361.4447264822?sp_atk=4de517a0-f3a4-4114-b21a-5f44939b2aa4">
+                                        <span class="prize__body-cost-icon">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </span>
+                                    </a>
+                                    </p>
+                                </div>
+                            </div>
+                </div>
+                <div  class="  prize__body-items-info col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <div   class=" prize__body-items row">
+                                    <a  href="https://shopee.vn/S%C3%A1ch-Ng%C6%B0%E1%BB%9Di-trong-mu%C3%B4n-ngh%E1%BB%81-Ng%C3%A0nh-Kinh-t%E1%BA%BF-c%C3%B3-g%C3%AC--i.119238273.5780003858"  class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <img src="https://vnn-imgs-f.vgcloud.vn/2021/10/18/09/kho-sach-dong-gia-hoi-chi-co-o-shopee-3.jpg" alt="">
+                                    </a>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <a href="https://shopee.vn/S%C3%A1ch-Ng%C6%B0%E1%BB%9Di-trong-mu%C3%B4n-ngh%E1%BB%81-Ng%C3%A0nh-Kinh-t%E1%BA%BF-c%C3%B3-g%C3%AC--i.119238273.5780003858">
+                                            <p>
+                                                <i class="fas fa-award"></i>
+                                                Người trong muôn nghề: Ngành Kinh tế có gì?</p>
+                                            <p>Nhóm tác giả Spiderum</p>
+                                        </a>
+                                       
+                                    </div>
+                                    <div class="prize__body-items-cost">
+                                        <p><span class="content">₫153.000</span>
+                                        <a href="https://shopee.vn/S%C3%A1ch-Ng%C6%B0%E1%BB%9Di-trong-mu%C3%B4n-ngh%E1%BB%81-Ng%C3%A0nh-Kinh-t%E1%BA%BF-c%C3%B3-g%C3%AC--i.119238273.5780003858">
+                                            <span class="prize__body-cost-icon">
+                                                <i class="fas fa-shopping-cart"></i>
+                                            </span>
+                                        </a>
+                                        </p>
+                                    </div>
+                                </div>
+                </div>
+                <div  class="  prize__body-items-info col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                            <div   class=" prize__body-items row">
+                                <a  href="https://shopee.vn/S%C3%A1ch-M%C3%AA-Cung-Ph%C3%A1t-Tri%E1%BB%83n-K%E1%BB%B9-N%C4%83ng-B%E1%BB%99-4-quy%E1%BB%83n-l%E1%BA%BB-t%C3%B9y-ch%E1%BB%8Dn-(2-6-tu%E1%BB%95i)-R%C3%A8n-T%C6%B0-Duy-V%C3%A0-Kh%E1%BA%A3-N%C4%83ng-T%E1%BA%ADp-Trung-i.41043630.6156129532?sp_atk=57c54822-a20b-43de-982f-409101afa3ae"  class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <img src="https://vnn-imgs-f.vgcloud.vn/2021/10/18/09/kho-sach-dong-gia-hoi-chi-co-o-shopee-4.jpg" alt="">
+                                </a>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <a href="https://shopee.vn/S%C3%A1ch-M%C3%AA-Cung-Ph%C3%A1t-Tri%E1%BB%83n-K%E1%BB%B9-N%C4%83ng-B%E1%BB%99-4-quy%E1%BB%83n-l%E1%BA%BB-t%C3%B9y-ch%E1%BB%8Dn-(2-6-tu%E1%BB%95i)-R%C3%A8n-T%C6%B0-Duy-V%C3%A0-Kh%E1%BA%A3-N%C4%83ng-T%E1%BA%ADp-Trung-i.41043630.6156129532?sp_atk=57c54822-a20b-43de-982f-409101afa3ae">
+                                        <p>
+                                            <i class="fas fa-award"></i>
+                                            Mê cung phát triển kỹ năng</p>
+                                        <p>Tác giả Kawa</p>
+                                    </a>
+                                   
+                                </div>
+                                <div class="prize__body-items-cost">
+                                    <p><span class="content">₫116.000</span>
+                                    <a href="https://shopee.vn/S%C3%A1ch-M%C3%AA-Cung-Ph%C3%A1t-Tri%E1%BB%83n-K%E1%BB%B9-N%C4%83ng-B%E1%BB%99-4-quy%E1%BB%83n-l%E1%BA%BB-t%C3%B9y-ch%E1%BB%8Dn-(2-6-tu%E1%BB%95i)-R%C3%A8n-T%C6%B0-Duy-V%C3%A0-Kh%E1%BA%A3-N%C4%83ng-T%E1%BA%ADp-Trung-i.41043630.6156129532?sp_atk=57c54822-a20b-43de-982f-409101afa3ae">
+                                        <span class="prize__body-cost-icon">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </span>
+                                    </a>
+                                    </p>
+                                </div>
+
+                            </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="  prize__body-items-info  col-lg-3 col-md-6 col-sm-6 col-xs-12">
+
+                        
+                                <div   class=" prize__body-items row">
+                                    <a  href="https://shopee.vn/S%C3%A1ch-(-Kh%E1%BB%95-Nh%E1%BB%8F-)-B%C3%AD-M%E1%BA%ADt-C%E1%BB%A7a-May-M%E1%BA%AFn-i.90428978.9430496000?sp_atk=d03da254-d7de-4b4d-bbef-6841cf8d3946"  class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        
+                                        <img src="https://www.reader.com.vn/uploads/images/review-sach-bi-mat-cua-may-man-1(1).jpg" alt="">
+                            
+                                    </a>
+
+                                
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <a href="https://shopee.vn/S%C3%A1ch-(-Kh%E1%BB%95-Nh%E1%BB%8F-)-B%C3%AD-M%E1%BA%ADt-C%E1%BB%A7a-May-M%E1%BA%AFn-i.90428978.9430496000?sp_atk=d03da254-d7de-4b4d-bbef-6841cf8d3946">
+                                            <p>
+                                                <i class="fas fa-award"></i>
+                                                Bí mật của may mắn</p>
+                                            <p>Alex Rovira và Fernando Trias de Bes</p>
+                                        </a>
+                                       
+                                    </div>
+                                    <div class="prize__body-items-cost">
+                                        <p><span class="content">₫36.000</span>
+                                        <a href="https://shopee.vn/S%C3%A1ch-(-Kh%E1%BB%95-Nh%E1%BB%8F-)-B%C3%AD-M%E1%BA%ADt-C%E1%BB%A7a-May-M%E1%BA%AFn-i.90428978.9430496000?sp_atk=d03da254-d7de-4b4d-bbef-6841cf8d3946">
+                                            <span class="prize__body-cost-icon">
+                                                <i class="fas fa-shopping-cart"></i>
+                                            </span>
+                                        </a>
+                                        </p>
+                                    </div>
+
+                                </div>
+                </div>
+
+                <div class="  prize__body-items-info  col-lg-3 col-md-6 col-sm-6 col-xs-12">
+
+                            <div   class=" prize__body-items row">
+                                <a  href="https://shopee.vn/S%C3%A1ch-Osho-H%E1%BA%A1nh-Ph%C3%BAc-T%E1%BA%A1i-T%C3%A2m-i.90428978.2278310593?sp_atk=58490043-070f-47d5-a8a0-a13582b1eebc"  class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    
+                                    <img src="https://www.reader.com.vn/uploads/images/Hanh-phuc-tai-tam.jpg" alt="">
+                        
+                                </a>
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <a href="https://shopee.vn/S%C3%A1ch-Osho-H%E1%BA%A1nh-Ph%C3%BAc-T%E1%BA%A1i-T%C3%A2m-i.90428978.2278310593?sp_atk=58490043-070f-47d5-a8a0-a13582b1eebc">
+                                        <p>
+                                            <i class="fas fa-award"></i>
+                                            Hạnh phúc tại tâm</p>
+                                        <p>Tác giả Osho</p>
+                                    </a>
+                                   
+                                </div>
+                                <div class="prize__body-items-cost">
+                                    <p><span class="content">
+                                        ₫76.440</span>
+                                    <a href="https://shopee.vn/S%C3%A1ch-Osho-H%E1%BA%A1nh-Ph%C3%BAc-T%E1%BA%A1i-T%C3%A2m-i.90428978.2278310593?sp_atk=58490043-070f-47d5-a8a0-a13582b1eebc">
+                                        <span class="prize__body-cost-icon">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </span>
+                                    </a>
+                                    </p>
+                                </div>
+
+                            </div>
+                    
+                </div>
+                <div class="  prize__body-items-info  col-lg-3 col-md-6 col-sm-6 col-xs-12">
+
+                            <div   class=" prize__body-items row">
+                                <a  href="https://shopee.vn/S%C3%A1ch-H%C3%A0nh-Tr%C3%ACnh-V%E1%BB%81-Ph%C6%B0%C6%A1ng-%C4%90%C3%B4ng-i.90428978.3516324755?sp_atk=7454ced1-95bf-46d4-9b0a-d24a9fbe49b5"  class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    
+                                    <img src="https://www.reader.com.vn/uploads/images/sach-hanh-trinh-ve-phuong-dong.jpg" alt="">
+                        
+                                </a>
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <a href="https://shopee.vn/S%C3%A1ch-H%C3%A0nh-Tr%C3%ACnh-V%E1%BB%81-Ph%C6%B0%C6%A1ng-%C4%90%C3%B4ng-i.90428978.3516324755?sp_atk=7454ced1-95bf-46d4-9b0a-d24a9fbe49b5">
+                                        <p>
+                                            <i class="fas fa-award"></i>
+                                            Hành trình về phương Đông</p>
+                                        <p>Tác giả Baird T. Spalding</p>
+                                    </a>
+                                   
+                                </div>
+                                <div class="prize__body-items-cost">
+                                    <p><span class="content">
+                                        ₫85.000</span>
+                                    <a href="https://shopee.vn/S%C3%A1ch-H%C3%A0nh-Tr%C3%ACnh-V%E1%BB%81-Ph%C6%B0%C6%A1ng-%C4%90%C3%B4ng-i.90428978.3516324755?sp_atk=7454ced1-95bf-46d4-9b0a-d24a9fbe49b5">
+                                        <span class="prize__body-cost-icon">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </span>
+                                    </a>
+                                    </p>
+                                </div>
+
+                            </div>
+                </div>
+                <div class="  prize__body-items-info  col-lg-3 col-md-6 col-sm-6 col-xs-12">
+
+                        <div   class=" prize__body-items row">
+                            <a  href="https://shopee.vn/S%C3%A1ch-%C4%90%E1%BA%AFc-Nh%C3%A2n-T%C3%A2m(-kh%E1%BB%95-l%E1%BB%9Bn)-i.90428978.2181906216?sp_atk=7ba635c1-ccea-4f3c-a059-0232c62ba65e"  class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                
+                                <img src="https://www.reader.com.vn/uploads/images/2019/10/31/22/dac-nhan-tam-2_600x400.jpg" alt="">
+                    
+                            </a>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <a href="https://shopee.vn/S%C3%A1ch-%C4%90%E1%BA%AFc-Nh%C3%A2n-T%C3%A2m(-kh%E1%BB%95-l%E1%BB%9Bn)-i.90428978.2181906216?sp_atk=7ba635c1-ccea-4f3c-a059-0232c62ba65e">
+                                    <p>
+                                        <i class="fas fa-award"></i>
+                                        Đắc Nhân Tâm</p>
+                                    <p>Tác giả Dale Carnegie</p>
+                                </a>
+                               
+                            </div>
+                            <div class="prize__body-items-cost">
+                                <p><span class="content">
+                                    ₫59.900</span>
+                                <a href="https://shopee.vn/S%C3%A1ch-%C4%90%E1%BA%AFc-Nh%C3%A2n-T%C3%A2m(-kh%E1%BB%95-l%E1%BB%9Bn)-i.90428978.2181906216?sp_atk=7ba635c1-ccea-4f3c-a059-0232c62ba65e">
+                                    <span class="prize__body-cost-icon">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </span>
+                                </a>
+                                </p>
+                            </div>
+                        </div>
+                </div>
+
+
+            </div>
+             
+  
+                </div>
+            </div>
+        </div>
+    </div>
+
+ <!-- Begin footer -->
+
+ <!-- Chỉnh lại -->
+ <script>
+    var checkMail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    function validEmail(txt){
+        if (txt.value.length==0){
+            alert('Email không được để trống');
+            return;
+        }
+        if (!checkMail.test(txt.value)){
+            alert('Email không hợp lệ');
+            return;
+        }
+        alert('Chúc mừng bạn đăng ký thành công');
+    }
+</script>
+<footer style="min-height: 365px;">
+<div class="grid wide">
+<div class="row footer__container">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div style="text-align: center;" class="footer__sign">
+
+                <p>Cung cấp địa chỉ e-mail của bạn và bạn sẽ nhận được một phiếu giảm giá 10%</p>
+                <form action="" name="form1">
+                    <input id="Email_sale" type="email" placeholder="Name@email.com" name="email">
+                </form>
+            </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div  style="text-align: center;" class="footer__sign">
+            <p>Tiết kiệm 10% cho đơn hàng đầu tiên của bạn bằng cách đăng ký</p>
+            <button  class="btn-success btn" onclick="validEmail(document.form1.email)" >Đăng ký giảm giá</button>
+
+        </div>
+
+          <div  style="text-align: center;"  class="footer__content row">
+                <a class="col-lg-2 col-md-6 col-sm-6 col-xs-12"  href="" class="book__body-btn">Sách</a>
+                <a class="col-lg-2 col-md-6 col-sm-6 col-xs-12" href="./writer.html"> Nhà văn</a>
+                <a class="col-lg-2 col-md-6 col-sm-6 col-xs-12" href="./events.html"> Tin tức</a>
+                <a class="col-lg-2 col-md-6 col-sm-6 col-xs-12" href="./search.html"> Đặt mua</a>
+                 <a class="col-lg-2 col-md-6 col-sm-6 col-xs-12" href="./feedback.html"> Ủng hộ</a>
+                 <a class="col-lg-2 col-md-6 col-sm-6 col-xs-12" href="./member.html">Về</a>
+        </div>
+    </div>
+      
+    </div>
+  </div>
+  <div class="container-grild">
+    <p>Theo Chúng tôi</p>             
+    <p><a href="https://www.facebook.com/profile.php?id=100033582201464"><i class="fab fa-facebook"></i></a></p>
+    <p><a href="https://www.youtube.com/channel/UCmrOH34ltrhYoIsOSANOvZA"><i class="fab fa-youtube"></i></a></p>
+    <p class="footer__text">&copy; Copyright 2021 by <a href="" class="footer__link">GR1</a></p>
+  </div>
+</footer>
+</body>
+<script src="./javascript.js"></script>
+</html>

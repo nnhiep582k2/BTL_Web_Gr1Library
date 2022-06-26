@@ -1,0 +1,145 @@
+
+
+
+
+
+/* mobile: <740px*/
+
+@media only screen and (max-width:46.1875em){
+  .news__body-responsive{
+    display: none;
+  }
+
+    .news__header{
+      height: 211px;
+    }
+ 
+    
+    .news__header h1{
+      display: none;
+    }
+
+   
+
+      .books__body-menu-icon{
+        display: inline-block;
+        left: 79%;
+        width: 52px;
+        padding: 6px 17px;
+        
+        height: 41px;
+    
+      }
+
+      .books__body-menu-icon i{
+        font-size: 20px;
+      }
+
+
+    .news__body-list{
+      width: 100%;
+        margin: 0 3%;
+    }
+
+    .news__body-list-header h1{
+     font-size: 30px;
+     margin-right: 41px;
+     margin-top: 20px;
+    }
+
+    .news__body-items-img-right{
+      margin: 0px 2%;
+    }
+
+   /* footer .container-grild {
+          background-color: var(--black-color);
+          margin-top: 50px;
+          padding: 24px;
+          height: 108px;
+          display: flex;
+          justify-content: space-around;
+    }
+*/
+ 
+}
+
+/* table: >=740px <1024px */
+@media only screen and (min-width:46.25em) and (max-width:63.9375em){
+
+
+  .news__body-responsive{
+    display: none;
+  }
+
+  .books__body-menu-icon{
+    display: inline-block;
+    left: 79%;
+    margin-left: 21px;
+    width: 52px;
+    padding: 6px 17px;
+    height: 41px;
+  }
+
+  .books__body-menu-icon i{
+    font-size: 20px;
+  }
+
+	
+     
+}
+
+
+@media only screen and (min-width:46.25em) and (max-width:85.375em){
+
+        
+     
+
+       .news__body-list-header h1{
+         font-size: 40px;
+         margin-top: 20px;
+        }
+
+       .news__header h1{
+          display: none;
+        }
+
+      .news__body-list{
+          width: 100%;
+          margin: 0 3%;
+        }
+
+        .news__body-responsive{
+         width: 100%;
+          position: relative;
+          margin-bottom: 50px;
+        }
+
+
+
+  
+     
+}
+
+
+
+
+
+
+/* pc : >=1024px */
+@media only screen  and (min-width: 64em){
+  .news__body-responsive{
+    display: block;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+

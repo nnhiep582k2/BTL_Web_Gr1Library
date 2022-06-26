@@ -1,0 +1,42 @@
+.feedback-wrap {
+	margin-bottom: 12px;
+}
+.feedback-wrap label {
+	margin-right: 12px;
+}
+.content__text-title {
+	text-align: center;
+	font-size: 45px;
+	font-weight: 500;
+}
+input, textarea{
+	border-radius: 5px;
+	border: 2px solid var(--sub-color);
+	padding: 8px;
+	width: 84%;
+}
+.content__text-note{
+	color: red;
+	font-style: oblique;
+	font-size: 15px;
+}
+button{
+	border: 2px solid var(--sub-color);
+	border-radius: 5px;
+	padding: 6px 62px;
+	display: block;
+	margin: 0 auto 4px;
+	background-color: black;
+	color: white;
+}
+
+.navbar-toggler {
+	margin: 0;
+}
+
+@media (max-width: 739px) {
+	input, textarea {
+		display: block;
+		width: 100%;
+	}
+}

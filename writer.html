@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GR1 Library - Nhà văn</title>
+    <link rel="icon" href="./assets/img/logo/logo_circle.png">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/font/fontawesome-free-5.15.4-web/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: rgba(126, 111, 111, 0.5);
+            --sub-color: #fff;
+            --black-color:rgb(29, 27, 27);
+            --header-height: 54px;
+        } 
+        body{
+            background-image: var(--sub-color);
+            color: var(--black-color);
+        }
+        header {
+            background-color: var(--black-color);
+        }  
+        .subnav__list-item a {
+            background-color: var(--black-color);
+        }
+        .subnav__list-item li:hover a {
+            background-color: var(--sub-color);
+        }
+        .container{
+            min-width: 76%;
+            margin: 0 auto;
+        }
+        .content{
+            padding: 0px 35px;
+            background-color: var(--sub-color);
+            box-shadow: none;
+            margin-top: 54px;
+            border: none;
+        }
+        .content__header{
+            height: 250px;
+            text-align: center;
+            padding:28px;
+            background-image: linear-gradient(0,rgba(14, 13, 12, 0.5),rgba(15, 18, 19, 0.5)),url(https://d4804za1f1gw.cloudfront.net/wp-content/uploads/sites/70/2020/02/24190644/Books-Editorial.jpg);
+            width: 100%;
+            margin-top: 54px;
+        }
+        .content__header h2{
+            color: var(--sub-color);
+        }
+        .content__header img{
+          height: 128px;
+            width: 224px;
+
+            border-radius: 33%;
+            box-shadow: 0px 10px 10px #000;
+        }
+
+        .content__body {
+            border-top: 5px solid black;
+        }
+
+        .content__body-first-item a:hover {
+            color: var(--black-color);
+        }
+        .content__body-first p{
+            color: var(--black-color);
+            font-size:20px;
+            font-weight:600;
+            letter-spacing: 2px;
+            line-height:25px;
+            text-align:center;
+            text-transform:uppercase;
+            margin: 40px 0px;
+            font-size: 30px;
+        }
+        .content__body-first-list span{
+            display: flex;
+        }
+      
+        .content__body-first-list span p a{
+            text-decoration: none;
+            padding: 20px;
+            color: var(--black-color);
+            border: 1px solid var(--black-color);
+            border-radius: 20px;
+            margin-left: 20px;
+            margin-right: 10px;
+            display: inline-block;
+            font-size: 20px !important;
+        }
+        .content__body-first-list {
+            margin-bottom: -43px;
+        }
+        .content__body-first-item a:hover{
+            background-color: #ccc;
+            border-radius: 50px;
+            animation: border 1s ease;
+            color: var(--sub-color);
+        }
+        .content__body-first-item a:hover::after{
+            content: "";
+            display: block;
+            width: 70px;
+            background-color:var(--sub-color);
+            height: 5px;
+            position: relative;
+            border-radius: 50%;
+            animation: item 1s ease;
+        }
+        .content__body-writer{
+            padding: 0px;
+        }
+        .content__body-writer img{
+             border-radius: 50px;
+            box-shadow: 4px 10px 0px #000;
+        }
+        .content__body-writer h1 a{
+            text-decoration: none;
+            color: var(--black-color);
+        }
+        .content__body-writer h1 a:hover{
+            color: red;
+        }
+        .content__body-writer p{
+            font-size:18px;
+            font-weight:500;
+            letter-spacing:-0.02px;
+            line-height:25px;
+            margin:10px 0px 10px;
+            text-align: justify;
+            font-style: italic;
+        }
+        .content__body-write h1:hover{
+            color: red;
+        }
+        .content__body-writer::after{
+            display:block;
+            content: "";
+            background-color: #000;
+            height: 6px;
+            width: 98%;
+            margin: 0 auto;
+            position: relative;
+            top: 40px;
+            margin-bottom: 40px;
+        }
+        .content__body-list p{
+            color: var(--black-color);
+            font-size:20px;
+            font-weight:600;
+            letter-spacing: 2px;
+            line-height:25px;
+            text-align:center;
+            text-transform:uppercase;
+            margin: 20px 0px;
+            font-size: 26px;
+        }
+        .content__body-list a{
+            color: var(--black-color);
+            text-decoration: none;
+            padding: 10px;
+            font-size: 25px;
+            font-weight: 600;
+        }
+        .content__body-list a:hover{
+            color: red;
+        }
+        .content__body-items{
+            display: inline-block;
+            height: 300px;
+        }
+        .content__body-search{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .content__body-items img{
+            width: 100%;
+            height: 220px;  
+            border-radius: 20px;
+            box-shadow: 0px 10px 10px #000;
+        }
+        .content__body-items p:hover{
+            color: red;
+        }
+        .content__body-add{
+            background-color: var(--black-color);
+            color: #ffffff;
+            height:50px;
+            width: 210px;
+            font-weight: 600;
+            letter-spacing:0.4px;
+            line-height: 50px;
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 30px;
+            text-transform:uppercase;
+            position: relative;
+        }
+        .content__body-add a{
+            color: var(--sub-color);
+            text-decoration: none;
+        }
+        .content__body-add a:hover{
+            color: var(--black-color);
+        }
+        .content__body-add:hover{
+            background-color: #ccc;
+            cursor: pointer;
+        }
+        .content__body-list::after{
+            display:block;
+            content: "";
+            background-color: #000;
+            height: 6px;
+            width: 98%;
+            margin: 0 auto;
+            position: relative;
+            top: 160px;
+            margin-bottom: 40px;
+        }
+        .content__body-logo{
+            text-align: center;
+            margin: 150px 0px 0px 0px;
+        }
+        .content__body-logo p{
+            font-family:Arnhem;
+            font-size:32px;
+            font-weight:500;
+            line-height:38px;   
+        }
+        footer {
+            min-height: 414px;
+            background-color:#eeeeee;
+            display: block;
+            font-weight:500;
+            font-family: Arnhem;
+        }
+        .footer__container {
+            color: var(--black-color);
+        }
+        .footer__sign {
+            margin: 20px;
+            font-size: 21px;
+            padding:20px 0px;
+        }
+        .footer__sign input{
+            background-color: #ffffff;
+            font-family:Calibre;
+            font-size:18px;
+            font-weight:500;
+            line-height:17px;
+            padding:15px;
+        }
+        .footer__sign button{
+            background-color: red;
+        }
+        .footer__sign button:hover{
+            color: var(--sub-color);
+            background-color: #ccc;
+        }
+        .footer__content a{
+            text-decoration: none;
+            color: var(--black-color);
+            font-family: sans-serif;
+        }
+        .footer__content a:hover{
+            color: red;
+        }
+        footer .container-grild{
+            background-color: var(--black-color);
+            margin-top: 50px;
+            padding: 24px;
+        }
+        footer .container-grild p{
+            display: inline-block;
+            padding: 20px;
+            font-size: 20px;
+        }
+        footer .container-grild p a{
+            color: var(--sub-color);
+            font-size: 20px;
+        }
+        footer .container-grild p a:hover{
+            color: red;
+        }
+        @keyframes border {
+            0% {
+                border-bottom: 3px solid black;
+            }
+            100% {
+                border-bottom: 3px solid black;
+            }
+        }
+    </style>
+</head>
+
+    <link rel="stylesheet" href="./assets/css/res_writers.css">
+<body>
+     <!-- Begin header -->
+     <header>
+        <nav class="grid wide">
+            <ul class="nav__list">
+                <div class="nav__list-left">
+                    <li class="nav__lit-item">
+                        <a href="index.html" class="nav__list-link">
+                            <span class="nav__list-item-text">Trang chủ</span>
+                        </a>
+                    </li>
+                    <li class="nav__list-item">
+                        <span class="nav__list-link">
+                            <span class="nav__list-item-text">
+                                Giới thiệu
+                                <i class="nav__list-icon fas fa-sort-down"></i>
+                            </span>
+                        </span>
+                        <ul class="subnav__list-item">
+                            <li><a href="./function.html">Chức năng, nhiệm vụ</a></li>
+                            <li><a href="./develop.html">Định hướng phát triển</a></li>
+                            <li><a href="./member.html">Thành viên</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav__list-item">
+                        <span class="nav__list-link">
+                            <span class="nav__list-item-text">
+                                Quy định
+                                <i class="nav__list-icon fas fa-sort-down"></i>
+                            </span>
+                        </span>
+                        <ul class="subnav__list-item">
+                            <li><a href="./howtouse.html">Sử dụng thư viện</a></li>
+                            <li><a href="./card.html">Thủ tục làm thẻ</a></li>
+                            <li><a href="./calendar.html">Lịch phục vụ</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav__list-item">
+                        <a href="./search.html" class="nav__list-link">
+                            <span class="nav__list-item-text">Tra cứu</span>
+                        </a>
+                    </li>
+                    <li class="nav__list-item">
+                        <span class="nav__list-link">
+                            <span class="nav__list-item-text">
+                                Dịch vụ 
+                                <i class="nav__list-icon fas fa-sort-down"></i>
+                            </span>
+                        </span>
+                        <ul class="subnav__list-item">
+                            <li><a href="./borrow.html">Mượn, trả tài liệu</a></li>
+                            <li><a href="./feedback.html">Phản hồi</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav__list-item">
+                        <a href="./contact.html" class="nav__list-link">
+                            <span class="nav__list-item-text">Liên hệ</span>
+                        </a>
+                    </li>  
+                </div>
+                <!-- Login -->
+              <div class="nav__list-right">
+                <li class="nav__list-item">
+                    <button type="button" class="btn btn-nav-login btn-nav-login-separate" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        Đăng nhập
+                    </button>
+                    <button type="button" class="btn btn-nav-register" data-bs-toggle="modal" data-bs-target="#registerModal">
+                        Đăng ký
+                    </button>
+                </li>
+            </div>
+            </ul>
+            <!-- Respon -->
+            <div class="nav-respon">
+                <label for="navigation" class="nav-bar"><i class="nav-bar-icon fas fa-bars"></i></label>
+            <input type="checkbox" id="navigation" hidden>
+            <div class="nav-bar-content">
+                <ul class="nav-bar-list">
+                    <div class="nav-list-left">
+                        <li class="nav__list-item">
+                            <a href="index.html" class="nav-list-link">
+                                <span class="nav-list-item-text">Trang chủ</span>
+                            </a>
+                        </li>
+                        <li class="nav-list-item">
+                            <span class="nav-list-link">
+                                <span class="nav-list-item-text">
+                                    <label for="subnav-bar" class="subnav-bar">
+                                        Giới thiệu
+                                        <i class="nav-list-icon fas fa-sort-down"></i>
+                                    </label>
+                                </span>
+                            </span>
+                            <input type="checkbox" id="subnav-bar" hidden>
+                            <ul class="subnav-list-item">
+                                <li><a href="./function.html">Chức năng, nhiệm vụ</a></li>
+                                <li><a href="./develop.html">Định hướng phát triển</a></li>
+                                <li><a href="./member.html">Thành viên</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-list-item">
+                            <span class="nav-list-link">
+                                <span class="nav-list-item-text">
+                                    <label for="subnav-bar1" class="subnav-bar1">
+                                        Quy định
+                                        <i class="nav-list-icon fas fa-sort-down"></i>
+                                    </label>
+                                </span>
+                            </span>
+                            <input type="checkbox" id="subnav-bar1" hidden>
+                            <ul class="subnav-list-item">
+                                <li><a href="./howtouse.html">Sử dụng thư viện</a></li>
+                                <li><a href="./card.html">Thủ tục làm thẻ</a></li>
+                                <li><a href="./calendar.html">Lịch phục vụ</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="./search.html" class="nav-list-link">
+                                <span class="nav-list-item-text">Tra cứu</span>
+                            </a>
+                        </li>
+                        <li class="nav-list-item">
+                            <span class="nav-list-link">
+                                <span class="nav-list-item-text">
+                                    <label for="subnav-bar2" class="subnav-bar2">
+                                        Dịch vụ 
+                                        <i class="nav-list-icon fas fa-sort-down"></i>
+                                    </label>
+                                </span>
+                            </span>
+                            <input type="checkbox" id="subnav-bar2" hidden>
+                            <ul class="subnav-list-item">
+                                <li><a href="./borrow.html">Mượn, trả tài liệu</a></li>
+                                <li><a href="./feedback.html">Phản hồi</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="./contact.html" class="nav-list-link">
+                                <span class="nav-list-item-text">Liên hệ</span>
+                            </a>
+                        </li>  
+                    </div>
+                    <!-- Login -->
+                  <div class="nav-list-right">
+                    <li class="nav-list-item">
+                        <button type="button" class="btn btn-nav-login btn-nav-login-separate" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            Đăng nhập
+                        </button>
+                        <button type="button" class="btn btn-nav-register" data-bs-toggle="modal" data-bs-target="#registerModal">
+                            Đăng ký
+                        </button>
+                    </li>
+                </div>
+                </ul>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+   <!-- The Modal -->
+<div class="modal" id="loginModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Đăng nhập</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form action="login.html" class="form-modals">
+              <div class="mb-3">
+                <label for="gmail" class="form-label form-account">Email:</label>
+                <input type="email" class="form-control" id="gmail" placeholder="Nhập email" name="email">
+              </div>
+              <div class="mb-3">
+                <label for="pwd" class="form-label form-pwd">Mật khẩu:</label>
+                <div class="wrap-pwd">
+                  <input type="password" class="form-control enter-pwd" id="pwd" placeholder="Nhập mật khẩu" name="pswd">
+                  <i class="show-pwd fas fa-eye" onclick="showPass()"></i>
+                </div>
+              </div>
+              <div class="form-check mb-3">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" name="remember" checked> Nhớ mật khẩu
+                </label>
+                  <div class="forget"><a href="./changepsw.html">Quên mật khẩu?</a></div>
+              </div>
+              <input type="button" onclick="login()" class="btn btn-login btn-submit btn-primary" value="Đăng nhập">
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="registerModal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Đăng ký</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <form class="form-modal" action="index.html">
+              <div class="mb-3">
+                  <label for="usname" class="form-label usNamep">Tên đầy đủ:</label>
+                  <input type="text" class="form-control" id="usname" placeholder="Nhập tên bạn" name="name">
+                </div>
+                <div class="mb-3">
+                  <label for="mail" class="form-label form-email">Email:</label>
+                  <input type="email" class="form-control" id="mail" placeholder="Nhập email" name="email">
+                </div>
+                <div class="mb-3">
+                  <label for="pass" class="form-label form-pass">Mật khẩu:</label>
+                  <div class="wrap-pwd wrap-pwd1">
+                      <input type="password" class="form-control enter-pwd1" id="pass" placeholder="Nhập mật khẩu" name="pswd">
+                      <i class="show-pwd fas fa-eye" onclick="showPass1()"></i>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="pass2" class="form-label form-pass2">Xác nhận mật khẩu:</label>
+                  <div class="wrap-pwd wrap-pwd2">
+                      <input type="password" class="form-control enter-pwd2" id="pass2" placeholder="Nhập lại mật khẩu" name="cf-pswd">
+                      <i class="show-pwd fas fa-eye" onclick="showPass2()"></i>
+                  </div>
+                </div>
+                <div class="form-check mb-3">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="remember" id="checkBox" checked> Đồng ý mọi điều khoản
+                  </label>
+                </div>
+                <input type="button" class="btn btn-register btn-submit btn-primary" onclick="register()" value="Đăng ký">
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content__header">
+        <div class="row">
+           <h2 class="col-lg-9">
+                NHÀ VĂN
+            <br>   
+            Những tiếng nói văn học vĩ đại nhất của Việt Nam</h2>
+            <div class="col-lg-3">
+               <img src="https://toplist.vn/images/800px/nha-van-noi-tieng-nhat-viet-nam-16394.jpg" alt="">
+            </div>
+        </div>
+   </div>
+
+     <!-- Begin main -->
+     <main class="container grid wide">
+        <div class="main">
+            <!-- content -->
+            <div class="content">
+                <div class="content__body">
+                    <div class="content__body-first">
+                        <div class="content__body-first-list">
+                            <span> 
+                                <p><a href=""><i class="far fa-clock"></i></a></p>
+                                <p><a href="https://www.facebook.com/profile.php?id=100033582201464"><i class="fab fa-facebook"></i></a></p>
+                                <p><a href=""><i class="fab fa-twitter"></i></a></p>
+                                <p class="content__body-first-item"><a href="./index.html">Trang chủ</a></p>
+                            </span>
+                        </div>
+                        <p style="text-align: center;">
+                        <i  class="fas fa-user-edit"></i>
+                        NHÀ VĂN CỦA TUẦN</p>
+                    </div>
+                    <div class="row content__body-writer">
+                        <div class="col-lg-8 col-md-6 col-sm-5 col-xs-12">
+                            <h1>
+                                <a href="https://nguoinoitieng.tv/nghe-nghiep/nha-van/anh-khang/a6">Anh Khang</a>
+                            </h1>
+                            <p> Xuất thân là một học sinh chuyên Văn của trường Trung học Phổ thông Chuyên Lê Hồng Phong Tp. Hồ Chí Minh, Anh Khang được nhiều bạn bè đồng trang lứa biết đến với các thành tích nổi bật như Huy chương vàng Olympics Truyền thống 30/4, Thủ khoa kỳ thi Học sinh Giỏi Thành phố, Giải III Học sinh Giỏi Quốc gia và được tuyển thẳng vào Đại Học Khoa học Xã hội & Nhân Văn.</p>
+                        </div>
+                       
+                            <img style="height: 650px;" class="col-lg-4 col-md-6 col-sm-7 col-xs-12" src="https://toplist.vn/images/800px/anh-khang-299076.jpg" alt="">
+               
+                    </div>
+                    <div class="content__body-list">
+                        <div class="content__body-search">
+                            <p>Lọc bởi</p>
+                            <a href="">
+                                A
+                            </a>
+                            <a href="">
+                                B
+                            </a>
+                            <a href="">
+                                C
+                            </a>
+                            <a href="">
+                                D
+                            </a>
+                            <a href="">
+                                E
+                            </a>
+                            <a href="">
+                                F
+                            </a>
+                            <a href="">
+                                G
+                            </a>
+                            <a href="">
+                                H
+                            </a>
+                            <a href="">
+                                I
+                            </a>
+                            <a href="">
+                                J
+                            </a>
+                            <a href="">
+                                K
+                            </a>
+                            <a href="">
+                                L
+                            </a>
+                            <a href="">
+                                M
+                            </a>
+                            <a href="">
+                                N
+                            </a>
+                            <a href="">
+                                O
+                            </a>
+                            <a href="">
+                                P
+                            </a>
+                            <a href="">
+                                Q
+                            </a>
+                            <a href="">
+                                R
+                            </a>
+                            <a href="">
+                                S
+                            </a>
+                            <a href="">
+                                T
+                            </a>
+                            <a href="">
+                                U
+                            </a>
+                            <a href="">
+                                V
+                            </a>
+                            <a href="">
+                                W
+                            </a>
+                            <a href="">
+                                X
+                            </a>
+                            <a href="">
+                                Y
+                            </a>
+                            <a href="">
+                                Z
+                            </a>
+                            <a href="">
+                                <i class="fas fa-list"></i>
+                            </a>
+                        </div>
+                        <div class="row">
+                            <div class="content__body-items col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <a   href="https://vanvn.vn/nha-van-le-van-nghia-cuoc-chay-dua-quyet-liet-da-dung-lai/">
+                                    <img src="https://vanvn.vn/wp-content/uploads/2021/01/Le-Van-Nghia-vhsaigon-2.jpg" alt="">
+                                    <p>Lê Văn Nghĩa</p>
+                                </a>
+                            </div> 
+                            <div class="content__body-items  col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <a href="https://vanvn.vn/dich-gia-nguyen-tien-van-cang-giau-co-sau-moi-lan-khanh-kiet/">
+                                    <img src="https://vanvn.vn/wp-content/uploads/2021/11/Nguyen-Tien-Van-vanvn.jpg" alt="">
+                                    <p> Nguyễn Tiến Văn</p>
+                                </a>
+                            </div> 
+                            <div class="content__body-items  col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <a href="https://vanvn.vn/nha-nghien-cuu-phan-nhat-chieu-chung-ta-co-rat-it-nghien-cuu-xung-tam-truyen-kieu/">
+                                    <img src="https://vanvn.vn/wp-content/uploads/2021/11/Nhat-Chieu-vanvn1.jpg" alt="">
+                                    <p>Phan Nhật Chiêu</p>
+                                </a>
+                            </div> 
+                            <div class="content__body-items  col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <a href="https://reviewnao.com/nha-van-noi-tieng-nhat-viet-nam/">
+                                    <img src="https://reviewnao.com/wp-content/uploads/2021/08/nha-van-noi-tieng-nhat-viet-nam-6.jpg" alt="">
+                                    <p>Tô Hoài</p>
+                                </a>
+                            </div> 
+                        </div>
+                        <div class="row">
+                             <div class="content__body-items col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <a href="https://vanvn.vn/pham-vinh-cu-voi-van-hoc-viet-nam/">
+                                    <img src="https://vanvn.vn/wp-content/uploads/2021/11/Pham-Vinh-Cu-vanvn2.jpg" alt="">
+                                    <p>Phạm Vĩnh Cư</p>
+                                </a>
+                            </div> 
+                             <div class="content__body-items col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <a href="https://vanvn.vn/dich-gia-nguyen-trung-duc-nguoi-hien-cua-van-chuong/">
+                                    <img src="https://vanvn.vn/wp-content/uploads/2021/10/Nguyen-trung-duc-vanvn.jpg" alt="">
+                                    <p>Nguyễn Trung Đức</p>
+                                </a>
+                            </div> 
+                              <div class="content__body-items col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <a href="https://vanvn.vn/vang-lua-cua-nguyen-huy-thiep-nhu-mot-du-ngon-ve-lich-su-va-qua-trinh-viet-lai-lich-su/">
+                                    <img src="https://vanvn.vn/wp-content/uploads/2021/07/nguyen-huy-thiep-vanvn.jpg" alt="">
+                                    <p>Nguyễn Huy Thiệp</p>
+                                </a>
+                            </div> 
+                              <div class="content__body-items col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <a href="https://tuoitre.vn/toi-la-beto-cua-nguyen-nhat-anh-se-duoc-dich-va-in-ban-o-han-quoc-20210927093048625.htm">
+                                    <img src="https://cdn.tuoitre.vn/zoom/236_147/2021/1/5/nguyennhatanhxem-1609822403958702737234-crop-1609822428365455465675.jpg" alt="">
+                                    <p>Nguyễn Nhật Ánh</p>
+                                </a>
+                            </div> 
+                        </div>
+                        <div class="row">
+                             <div class="content__body-items col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <a href="https://vanvn.vn/chu-van-son-song-tho-tieu-luan-cua-van-gia/">
+                                    <img src="https://vanvn.vn/wp-content/uploads/2021/07/Chu-Van-Son-vanvn1.jpg" alt="">
+                                    <p>Chu Văn Sơn</p>
+                                </a>
+                            </div> 
+                             <div class="content__body-items col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <a href="https://vanvn.vn/van-hoc-mien-nui-va-dong-gop-cua-pham-duy-nghia/">
+                                    <img src="https://vanvn.vn/wp-content/uploads/2021/03/Pham-Duy-Nghia-vanvn.jpg" alt="">
+                                    <p>Phạm Duy Nghĩa</p>
+                                </a>
+                            </div> 
+                              <div class="content__body-items col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <a href="https://vanvn.vn/nha-van-nguyen-vu-dien-nguoi-viet-su-ke-chuyen/">
+                                    <img src="https://vanvn.vn/wp-content/uploads/2021/10/Nguyen-Vu-Dien-vanvn.jpg" alt="">
+                                    <p>Nguyễn Vũ Điền</p>
+                                </a>
+                            </div> 
+                              <div class="content__body-items col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <a href="https://vanvn.vn/nha-tho-tran-nhuan-minh-nhung-cau-tho-vat-va-man-nhu-mau/">
+                                    <img src="https://vanvn.vn/wp-content/uploads/2021/05/Tran-Nhuan-Minh-vanvn1.jpg" alt="">
+                                    <p>Trần Nhuận Minh</p>
+                                </a>
+                            </div> 
+                        </div>
+                    </div>   
+
+
+
+
+                    <div class="content__body-add">
+                        <a href="./writer2.html">See more writers</a>
+                    </div>
+                </div>  
+                <div class="content__body-logo">
+                    <img width="100px" src="./assets/img/logo/logo_circle.png" alt="">
+                    <p style="color: red;">GR1 Library</p>
+                </div>       
+            </div>
+        </div>
+    </main>
+    <!-- Begin footer -->
+
+ <!-- Chỉnh lại -->
+ <script>
+    var checkMail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    function validEmail(txt){
+        if (txt.value.length==0){
+            alert('Email không được để trống');
+            return;
+        }
+        if (!checkMail.test(txt.value)){
+            alert('Email không hợp lệ');
+            return;
+        }
+        alert('Chúc mừng bạn đăng ký thành công');
+    }
+</script>
+<footer style="min-height: 365px;">
+<div class="grid wide">
+<div class="row footer__container">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div style="text-align: center;" class="footer__sign">
+
+                <p>Cung cấp địa chỉ e-mail của bạn và bạn sẽ nhận được một phiếu giảm giá 10%</p>
+                <form action="" name="form1">
+                    <input id="Email_sale" type="email" placeholder="Name@email.com" name="email">
+                </form>
+            </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div  style="text-align: center;" class="footer__sign">
+            <p>Tiết kiệm 10% cho đơn hàng đầu tiên của bạn bằng cách đăng ký</p>
+            <button  class="btn-success btn" onclick="validEmail(document.form1.email)" >Đăng ký giảm giá</button>
+
+        </div>
+
+          <div  style="text-align: center;"  class="footer__content row">
+                <a class="col-lg-2 col-md-6 col-sm-6 col-xs-12"  href="" class="book__body-btn">Sách</a>
+                <a class="col-lg-2 col-md-6 col-sm-6 col-xs-12" href="./writer.html"> Nhà văn</a>
+                <a class="col-lg-2 col-md-6 col-sm-6 col-xs-12" href="./events.html"> Tin tức</a>
+                <a class="col-lg-2 col-md-6 col-sm-6 col-xs-12" href="./search.html"> Đặt mua</a>
+                 <a class="col-lg-2 col-md-6 col-sm-6 col-xs-12" href="./feedback.html"> Ủng hộ</a>
+                 <a class="col-lg-2 col-md-6 col-sm-6 col-xs-12" href="./member.html">Về</a>
+        </div>
+    </div>
+      
+    </div>
+  </div>
+  <div class="container-grild">
+    <p>Theo Chúng tôi</p>             
+    <p><a href="https://www.facebook.com/profile.php?id=100033582201464"><i class="fab fa-facebook"></i></a></p>
+    <p><a href="https://www.youtube.com/channel/UCmrOH34ltrhYoIsOSANOvZA"><i class="fab fa-youtube"></i></a></p>
+    <p class="footer__text">&copy; Copyright 2021 by <a href="" class="footer__link">GR1</a></p>
+  </div>
+</footer>
+</body>
+<script src="./javascript.js"></script>
+</html>
